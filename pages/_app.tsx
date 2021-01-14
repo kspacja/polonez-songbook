@@ -1,4 +1,8 @@
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import {
+  ThemeProvider,
+  createGlobalStyle,
+  ThemeProps,
+} from 'styled-components';
 
 const theme = {
   font: '#323656',
@@ -8,10 +12,12 @@ const theme = {
   // #E5959C, #5E5C66, #40BBDA
 };
 
+type Theme = typeof theme;
+
 const GlobalStyles = createGlobalStyle`
   html,
   body {
-    background: ${(props) => props.theme.bg};
+    background: ${(props: ThemeProps<Theme>) => props.theme.bg};
   }
 
 
@@ -23,7 +29,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-family: 'Inconsolata', monospace;
     font-weight: 400;
-    color: ${(props) => props.theme.font};
+    color: ${(props: ThemeProps<Theme>) => props.theme.font};
   }
   
   body {
