@@ -1,7 +1,7 @@
 type Pattern = [string, RegExp];
 
 const PATTERNS: Pattern[] = [
-  ['youtube', /youtu/],
+  ['youtube', /(\.|\/)youtu/],
   ['spotify', /open\.spotify/],
 ];
 

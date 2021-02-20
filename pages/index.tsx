@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <Container>
       {songwriters.map((writer) => (
-        <SongwriterCard key={writer.name} songwriter={writer} />
+        <SongwriterCard key={writer.slug} songwriter={writer} />
       ))}
     </Container>
   );

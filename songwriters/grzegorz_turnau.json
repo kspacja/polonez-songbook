@@ -1,20 +1,37 @@
 {
   "name": "Grzegorz Turnau",
+  "description": "### __Grzegorz Jerzy Turnau__ *(ur. 31 lipca 1967 w Krakowie)*\n\n__Główny instrument__: fortepian",
+  "playlists": [{
+    "author": "Krzysztof Ciach",
+    "mediaUrl": "https://open.spotify.com/playlist/6wrrFxlFxfOQlZZK96xZj0?si=ueE2WYrYSXGzKTR7bjAtrg",
+    "name": "[BEST] Grzegorz Turnau"
+  }],
   "tops": [
     {
       "artist": "Grzegorz Turnau",
       "title": "Pamięć",
-      "link": "https://www.youtube.com/watch?v=sXRcQvqaKHc"
+      "mediaUrl": "https://www.youtube.com/watch?v=sXRcQvqaKHc"
     },
     {
       "artist": "Grzegorz Turnau",
-      "title": "Przepakowania",
-      "link": "https://open.spotify.com/track/2VhOL7XmATCFTasTH8a49t?si=yuyUFUX7Tcy2TRAm8AvjoQ"
+      "title": "Znów wędrujemy",
+      "mediaUrl": "https://www.youtube.com/watch?v=CCH3dZ3sYA8"
     },
     {
       "artist": "Grzegorz Turnau",
       "title": "To tu, to tam",
-      "link": "https://www.youtube.com/watch?v=mIx5mRMOzTc"
+      "mediaUrl": "https://www.youtube.com/watch?v=mIx5mRMOzTc"
+    },
+    {
+      "artist": "Grzegorz Turnau",
+      "title": "Liryka, liryka",
+      "mediaUrl": "https://www.youtube.com/watch?v=1wVRml4L7WA"
+    },
+    {
+      "artist": "Grzegorz Turnau",
+      "title": "Do wód",
+      "mediaUrl": "https://www.youtube.com/watch?v=kxtzGoGg_XQ"
     }
+
   ]
 }

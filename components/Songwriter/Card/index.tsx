@@ -1,16 +1,8 @@
 import { Songwriter } from 'types';
-import NextImage from 'next/Image';
-import snakeCase from 'lodash/snakeCase';
-import {
-  Container,
-  Name,
-  Image,
-  TopList,
-  ShortTop,
-  Title,
-  Icon,
-} from './styles';
-import getMediaName from 'utils/getMediaName';
+import { SongwriterThumbnail } from 'components/Songwriter';
+import { SongHead } from 'components/Song';
+
+import { Container, Name, TopList, ShortTop, Icon } from './styles';
 
 type CardProps = {
   songwriter: Songwriter;
@@ -19,33 +11,19 @@ type CardProps = {
 export default function Card({ songwriter }: CardProps) {
   return (
     <Container>
-      <Image>
-        <NextImage
-          src={`/images/${snakeCase(songwriter.name)}.jpg`}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="left top"
-        />
-      </Image>
+      <SongwriterThumbnail songwriter={songwriter} />
       <div>
-        <Name href="/songwriter">{songwriter.name}</Name>
+        <Name href={`/songwriter/${songwriter.slug}`}>{songwriter.name}</Name>
         <ShortTop>
           Esensjonale piosenki:
           <TopList>
-            {songwriter.tops.map(({ link, artist, title }) => (
-              <li key={link}>
-                <a href={link} target="_blank" rel="noopener noreferrer">
-                  {artist}: <Title>{title}</Title>
-                </a>
-                <Icon>
-                  <NextImage
-                    src={`/svgs/${getMediaName(link)}.svg`}
-                    width="17"
-                    height="17"
-                  />
-                </Icon>
-              </li>
-            ))}
+            {songwriter.tops.map((song) => {
+              return (
+                <li key={song.mediaUrl}>
+                  <SongHead song={song} />
+                </li>
+              );
+            })}
           </TopList>
         </ShortTop>
       </div>

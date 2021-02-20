@@ -1,30 +1,32 @@
 {
   "name": "Krzesimir Dębski",
+  "description": "*Just* a mediaUrl: https://reactjs.com.",
+  "playlists": [],
   "tops": [
     {
       "artist": "Anna Jurksztowicz",
       "title": "Stan Pogody",
-      "link": "https://www.youtube.com/watch?v=K0FhEHQ5zCk"
+      "mediaUrl": "https://www.youtube.com/watch?v=K0FhEHQ5zCk"
     },
     {
       "artist": "Anna Jurksztowicz",
       "title": "Przenikam",
-      "link": "https://open.spotify.com/track/1gchzeFpgqm6Pr1cfR5XmN?si=Q1OzjpEVTB-8fUAbL8hJmA"
+      "mediaUrl": "https://open.spotify.com/track/1gchzeFpgqm6Pr1cfR5XmN?si=Q1OzjpEVTB-8fUAbL8hJmA"
     },
     {
       "artist": "Grażyna Łobaszewka",
       "title": "Czas na uczy pogody",
-      "link": "https://www.youtube.com/watch?v=Nqbh2E6a300"
+      "mediaUrl": "https://www.youtube.com/watch?v=Nqbh2E6a300"
     },
     {
       "artist": "Krzysztof Antkowiak",
       "title": "Zwariowane sam na sam",
-      "link": "https://www.youtube.com/watch?v=XCS9rrD7njQ"
+      "mediaUrl": "https://www.youtube.com/watch?v=XCS9rrD7njQ"
     },
     {
       "artist": "Zdzisława Sosnicka",
       "title": "Moje sentymenty",
-      "link": "https://www.youtube.com/watch?v=fzapS0LWKJg"
+      "mediaUrl": "https://www.youtube.com/watch?v=fzapS0LWKJg"
     }
 
   ]
