@@ -12,14 +12,14 @@ class MyDocument extends Document {
         <Head>
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap"
             rel="stylesheet"
           />
         </Head>
         <body>
           <Main />
           <NextScript />
-          <footer>
+          {/* <footer>
             Ikony wykonane przez{' '}
             <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
               Freepik
@@ -30,7 +30,7 @@ class MyDocument extends Document {
             </a>
             ). Wszystkie zdjęcia użyte na stronie są na licencji Creative
             Common.
-          </footer>
+          </footer> */}
         </body>
       </Html>
     );

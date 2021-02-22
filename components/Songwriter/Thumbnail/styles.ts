@@ -11,8 +11,5 @@ export const Image = styled.figure`
   width: ${(props: ImageProps) => props.width}px;
   height: ${(props: ImageProps) => props.height}px;
   min-width: 50px;
-
-  border-radius: 0.2em;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   overflow: hidden;
 `;

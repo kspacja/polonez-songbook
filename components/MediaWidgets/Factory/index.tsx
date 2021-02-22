@@ -1,5 +1,5 @@
 import { Song, Playlist } from 'types';
-import { getArtistAndTitle } from 'components/Song/ArtistAndTitle';
+import getArtistAndTitle from 'utils/getArtistAndTitle';
 
 import MediaWidget from './MediaWidget';
 

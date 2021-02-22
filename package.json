@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@types/styled-components": "^5.1.7",
+    "hex-to-rgba": "^2.0.1",
     "lodash": "^4.17.20",
+    "minisearch": "^3.0.2",
     "next": "10.0.5",
     "rc-tabs": "^11.7.3",
     "react": "17.0.1",
@@ -21,6 +23,7 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.168",
     "@types/react": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",

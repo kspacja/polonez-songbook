@@ -83,10 +83,6 @@ export default function SongwriterView() {
           <h2 id="short-note">Krótka notka</h2>
           <Anchor id="short-note" />
           <Text>{songwriter.description}</Text>
-
-          <h2 id="sth-more">Coś więcej?</h2>
-          <Anchor id="sth-more" />
-          <Text>{songwriter.freeText}</Text>
         </TextsColumn>
       </ColumnContainer>
     </Container>

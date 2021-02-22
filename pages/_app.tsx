@@ -8,13 +8,18 @@ import {
 } from 'styled-components';
 
 const theme = {
-  font: '#4D6169',
+  font: '#555',
   fontInvert: '#FFFFFF',
-  bg: '#eeeaea',
+  bg: '#FFFFFF',
   card: '#FFFFFF',
   details: '#EB5057',
+  outline: '#62B5D9',
+  button: {
+    idle: '#efefef',
+    hover: '#dfdfdf',
+  },
   icons: '#000',
-  textBg: 'rgba(255, 255, 255, 0.8)',
+  textBg: 'rgba(255, 255, 255, 0.9)',
   focused: 'rgba(255, 240, 240, 1)',
 };
 
@@ -25,6 +30,7 @@ const darkTheme = {
   card: '#222222',
   details: '#EB5057',
   icons: '#FFF',
+  button: {},
   textBg: 'rgba(0, 0, 0, 0.3)',
   focused: 'rgba(0, 0, 0, 0.8)',
 };
@@ -59,14 +65,16 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+  button,
   html,
   body,
   input,
   textarea {
     padding: 0;
     margin: 0;
-    font-family: 'Inconsolata', monospace;
+    font-family: 'EB Garamond', serif;
     font-weight: 400;
+    font-size: 18px;
     color: ${(props: ThemeProps<Theme>) => props.theme.font};
   }
   
@@ -92,6 +100,12 @@ const GlobalStyles = createGlobalStyle`
   footer {
     padding: 1em;
   }
+
+  button {
+    padding: 0.2em;
+    margin: 0;
+    border: none;
+  }
   
   * {
     box-sizing: border-box;
@@ -99,7 +113,7 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 function MyApp({ Component, pageProps }) {
-  const [mode, setMode] = useState(darkTheme);
+  const [mode, setMode] = useState(theme);
 
   useEffect(() => {
     const isDark =

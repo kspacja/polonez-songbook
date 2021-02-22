@@ -3,18 +3,8 @@ import styled from 'styled-components';
 export const Icon = styled.span``;
 
 export const Container = styled.div`
-  padding: 0.25em 0;
-
-  @media (max-width: 500px) {
-    padding-right: 25px;
-    position: relative;
-
-    ${Icon} {
-      position: absolute;
-      top: 0.75em;
-      right: 0;
-    }
-  }
+  font-size: 0.9em;
+  padding: 0.1em 0;
 
   a {
     vertical-align: top;
@@ -23,8 +13,4 @@ export const Container = styled.div`
   }
 `;
 
-export const Title = styled.span`
-  @media (max-width: 500px) {
-    display: block;
-  }
-`;
+export const Title = styled.span``;

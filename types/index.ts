@@ -16,5 +16,4 @@ export type Songwriter = {
   tops: Song[];
   playlists: Playlist[];
   description: string;
-  freeText: string;
 };
