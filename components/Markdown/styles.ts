@@ -10,6 +10,6 @@ export const StyledMarkdown = styled(ReactMarkdown)`
   h5,
   h6 {
     margin-top: 0;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
   }
 `;

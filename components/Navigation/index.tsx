@@ -1,22 +1,78 @@
-import { NavContainer } from './styles';
+import { useState, useCallback } from 'react';
+import { useSprings, useSpring } from 'react-spring';
 
-export default function Navigation() {
+import { NavContainer, Trigger, BurgerLine, MenuList } from './styles';
+
+function initRight(index: number) {
+  const rightValue = 0.65 + (index % 2 === 0 ? 0.6 - index * 0.15 : 0);
+  return `${rightValue}rem`;
+}
+
+function hoverRight(index: number) {
+  const rightValue =
+    0.65 + (index % 2 !== 0 ? 0.6 - index * 0.15 : index * 0.1);
+  return `${rightValue}rem`;
+}
+
+const LINES = 3;
+
+interface NavigationProps {
+  items: { href: string; text: string }[];
+}
+
+export default function Navigation({ items }: NavigationProps) {
+  const [isOpen, setOpen] = useState(false);
+
+  const [springs, set] = useSprings(LINES, (index: number) => ({
+    right: initRight(index),
+    config: {
+      tension: 200,
+      friction: 10,
+    },
+  }));
+
+  const menuListStyle = useSpring({
+    opacity: isOpen ? 1 : 0,
+    transform: isOpen ? 'translateY(0px)' : 'translateY(200%)',
+    config: {
+      tension: 150,
+      friction: 20,
+    },
+  });
+
+  const handleFocus = useCallback(
+    () => set((index: number) => ({ right: hoverRight(index) })),
+    [set]
+  );
+
+  const handleBlur = useCallback(
+    () => set((index: number) => ({ right: initRight(index) })),
+    [set]
+  );
+
   return (
     <NavContainer>
-      <ul>
-        <li>
-          <a href="#tops">Esensja</a>
-        </li>
-        <li>
-          <a href="#playlists">Playlisty</a>
-        </li>
-        <li>
-          <a href="#short-note">Krótka notka</a>
-        </li>
-        <li>
-          <a href="#sth-more">Coś więcej</a>
-        </li>
-      </ul>
+      <Trigger
+        onMouseEnter={handleFocus}
+        onMouseLeave={handleBlur}
+        onClick={() => {
+          setOpen((open) => !open);
+          isOpen ? handleBlur() : handleFocus();
+        }}
+      >
+        {springs.map((style, index) => (
+          <BurgerLine key={index} index={index} style={style} />
+        ))}
+      </Trigger>
+      <MenuList style={menuListStyle}>
+        {items.map(({ href, text }) => (
+          <li key={href}>
+            <a href={href} onClick={() => setOpen((open) => !open)}>
+              {text}
+            </a>
+          </li>
+        ))}
+      </MenuList>
     </NavContainer>
   );
 }

@@ -12,6 +12,7 @@ export const theme = {
   icons: '#000',
   textBg: 'rgba(255, 255, 255, 0.9)',
   focused: 'rgba(255, 240, 240, 1)',
+  shadow: 'rgba(0, 0, 0, 0.2)',
 };
 
 export const darkTheme = {

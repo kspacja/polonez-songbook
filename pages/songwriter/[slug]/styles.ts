@@ -4,8 +4,8 @@ import color from 'utils/color';
 
 export const Container = styled.article`
   margin: 0 auto;
-  padding: 1em;
-  max-width: calc(500px + 2em);
+  padding: 1rem;
+  max-width: calc(500px + 2rem);
 `;
 
 const BarBase = styled.div`
@@ -18,7 +18,7 @@ const BarBase = styled.div`
 
   display: flex;
   align-items: center;
-  padding: 1em 2em;
+  padding: 1rem 2rem;
 `;
 
 export const Bar = styled(BarBase)`
@@ -27,8 +27,8 @@ export const Bar = styled(BarBase)`
 
 export const Text = styled(Markdown)`
   background: ${color('textBg')};
-  padding: 1.25em;
-  margin: 1em 0;
+  padding: 1.25rem;
+  margin: 1rem 0;
   line-height: 1.25;
   text-align: justify;
   border-left: solid 1px ${color('details')};
@@ -39,8 +39,7 @@ export const Text = styled(Markdown)`
 `;
 
 export const Name = styled.h1`
-  color: ${color('fontInvert')};
-  font-size: 1.5em;
+  font-size: 2rem;
   line-height: 1.5;
   font-weight: 300;
   margin: 0;
@@ -71,5 +70,10 @@ export const Anchor = styled.div`
   height: 0;
   width: 100%;
 
-  top: -10em;
+  top: -5rem;
+`;
+
+export const Header = styled.header`
+  display: flex;
+  align-items: center;
 `;

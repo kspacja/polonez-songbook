@@ -3,13 +3,13 @@ import hexToRgba from 'utils/hexToRgba';
 
 export const Container = styled.div`
   margin: 0 auto;
-  padding: 0 1em;
-  max-width: calc(500px + 2em);
+  padding: 0 1rem;
+  max-width: calc(500px + 2rem);
 `;
 
 export const SearchInput = styled.input`
   width: 100%;
-  padding: 0.5em;
+  padding: 0.5rem;
   border: solid 1px #ccc;
   border-radius: 0;
 

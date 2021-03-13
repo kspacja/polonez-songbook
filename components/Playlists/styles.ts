@@ -3,12 +3,12 @@ import Tabs from 'rc-tabs';
 import color from 'utils/color';
 
 export const StyledTabs = styled(Tabs)`
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 
   .rc-tabs {
     &-nav-list {
       display: flex;
-      padding-bottom: 1em;
+      padding-bottom: 1rem;
     }
 
     &-nav-operations-hidden {
@@ -17,10 +17,10 @@ export const StyledTabs = styled(Tabs)`
 
     &-tab-btn {
       cursor: pointer;
-      padding: 0.25em 0.5em;
+      padding: 0.25rem 0.5rem;
 
       background: ${color('textBg')};
-      margin-right: 0.5em;
+      margin-right: 0.5rem;
 
       &:focus {
         outline: none;

@@ -19,12 +19,12 @@ export default createGlobalStyle`
     }
 
     &:before {
-      height: 0.2em;
+      height: 0.2rem;
       top: 0;
     }
 
     &:after {
-      height: 1.5em;
+      height: 1.5rem;
       bottom: 0;
     }
   }
@@ -40,10 +40,14 @@ export default createGlobalStyle`
     font-weight: 400;
     font-size: 18px;
     color: ${(props: ThemeProps<Theme>) => props.theme.font};
+
+    @media only screen and (min-resolution: 240dpi) {
+      font-size: 24px;
+    }
   }
 
   body {
-    padding: 0.2em 0 1.5em;
+    padding: 0.2rem 0 1.5rem;
     margin: 0;
   }
 
@@ -62,11 +66,11 @@ export default createGlobalStyle`
   }
 
   footer {
-    padding: 1em;
+    padding: 1rem;
   }
 
   button {
-    padding: 0.2em;
+    padding: 0.2rem;
     margin: 0;
     border: none;
   }
