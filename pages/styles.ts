@@ -2,7 +2,6 @@ import styled, { keyframes } from 'styled-components';
 import hexToRgba from 'utils/hexToRgba';
 
 export const Container = styled.div`
-  padding: 0;
   margin: 0 auto;
   padding: 0 1em;
   max-width: calc(500px + 2em);

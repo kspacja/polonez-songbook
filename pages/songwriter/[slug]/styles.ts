@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import Markdown from 'components/Markdown';
-import Tabs from 'rc-tabs';
-
-const color = (color: string) => (props) => props.theme[color];
+import color from 'utils/color';
 
 export const Container = styled.article`
-  min-height: 100vh;
-  padding: 2em;
+  margin: 0 auto;
+  padding: 1em;
+  max-width: calc(500px + 2em);
 `;
 
 const BarBase = styled.div`
@@ -24,39 +23,6 @@ const BarBase = styled.div`
 
 export const Bar = styled(BarBase)`
   top: 0;
-`;
-
-export const BottomBar = styled(BarBase)`
-  bottom: 0;
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    display: flex;
-  }
-
-  ul > li {
-    font-size: 0.95em;
-
-    &:after {
-      content: '|';
-      font-size: 1.1em;
-      color: ${color('fontInvert')};
-      padding: 0 0.5em;
-    }
-
-    &:last-child:after {
-      content: '';
-      padding-right: 0;
-    }
-  }
-
-  a {
-    color: ${color('fontInvert')};
-    white-space: nowrap;
-  }
 `;
 
 export const Text = styled(Markdown)`
@@ -91,33 +57,14 @@ export const ColumnContainer = styled.div`
 `;
 
 const Column = styled.div`
-  padding-right: 2em;
-  min-width: 320px;
-
-  @media (max-width: 760px) {
-    padding-right: 0;
-  }
+  width: 100%;
 `;
 
-export const PlaylistColumn = styled(Column)`
-  flex: 1;
-`;
+export const PlaylistColumn = styled(Column)``;
 
-export const TopsColumn = styled(Column)`
-  width: 320px;
+export const TopsColumn = styled(Column)``;
 
-  @media (max-width: 760px) {
-    width: 100%;
-  }
-`;
-
-export const TextsColumn = styled(Column)`
-  flex: 2;
-
-  @media (max-width: 1200px) {
-    width: 100%;
-  }
-`;
+export const TextsColumn = styled(Column)``;
 
 export const Anchor = styled.div`
   position: relative;
@@ -125,36 +72,4 @@ export const Anchor = styled.div`
   width: 100%;
 
   top: -10em;
-`;
-
-export const StyledTabs = styled(Tabs)`
-  margin-bottom: 1em;
-
-  .rc-tabs {
-    &-nav-list {
-      display: flex;
-      padding-bottom: 1em;
-    }
-
-    &-nav-operations-hidden {
-      display: none;
-    }
-
-    &-tab-btn {
-      cursor: pointer;
-      padding: 0.25em 0.5em;
-
-      background: ${color('textBg')};
-      margin-right: 0.5em;
-
-      &:focus {
-        outline: none;
-        background: ${color('focused')};
-      }
-    }
-
-    &-tab-active .rc-tabs-tab-btn {
-      border-bottom: solid 1px ${color('details')};
-    }
-  }
 `;

@@ -3,6 +3,8 @@ import DefaultErrorPage from 'next/error';
 
 import { songwritersMap } from 'songwriters';
 import MediaWidget from 'components/MediaWidgets';
+import Playlists from 'components/Playlists';
+
 import { SongwriterThumbnail } from 'components/Songwriter';
 import getMediaName from 'utils/getMediaName';
 
@@ -13,12 +15,10 @@ import {
   TextsColumn,
   Container,
   Text,
-  BottomBar,
   ColumnContainer,
   Anchor,
 } from './styles';
-
-import Playlists from './playlists';
+import Navigation from 'components/Navigation';
 
 export default function SongwriterView() {
   const {
@@ -42,22 +42,7 @@ export default function SongwriterView() {
       <SongwriterThumbnail songwriter={songwriter} size={50} />
       <Name>{songwriter.name}</Name>
 
-      <BottomBar>
-        <ul>
-          <li>
-            <a href="#tops">Esensja</a>
-          </li>
-          <li>
-            <a href="#playlists">Playlisty</a>
-          </li>
-          <li>
-            <a href="#short-note">Krótka notka</a>
-          </li>
-          <li>
-            <a href="#sth-more">Coś więcej</a>
-          </li>
-        </ul>
-      </BottomBar>
+      <Navigation />
 
       <ColumnContainer>
         <TopsColumn>
