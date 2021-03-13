@@ -6,7 +6,7 @@ const color = (color: string) => (props) => props.theme[color];
 
 export const Container = styled.article`
   min-height: 100vh;
-  padding: 6em 2em 3em;
+  padding: 2em;
 `;
 
 const BarBase = styled.div`

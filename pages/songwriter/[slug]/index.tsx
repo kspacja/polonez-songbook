@@ -13,7 +13,6 @@ import {
   TextsColumn,
   Container,
   Text,
-  Bar,
   BottomBar,
   ColumnContainer,
   Anchor,
@@ -40,10 +39,8 @@ export default function SongwriterView() {
 
   return (
     <Container>
-      <Bar>
-        <SongwriterThumbnail songwriter={songwriter} size={50} />
-        <Name>{songwriter.name}</Name>
-      </Bar>
+      <SongwriterThumbnail songwriter={songwriter} size={50} />
+      <Name>{songwriter.name}</Name>
 
       <BottomBar>
         <ul>

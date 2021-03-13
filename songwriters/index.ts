@@ -37,7 +37,7 @@ export const songwritersSearch = new MiniSearch({
     boost: { name: 2 },
     combineWith: 'AND',
     prefix: true,
-    fuzzy: 0.3,
+    fuzzy: 0.15,
   },
   extractField: (document: Songwriter, fieldName) => {
     switch (fieldName) {

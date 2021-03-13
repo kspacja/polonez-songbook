@@ -1,54 +1,31 @@
-import { useCallback, useState, useMemo } from 'react';
 import { SearchResult } from 'minisearch';
-import { debounce } from 'lodash';
 import allSongwriters, { songwritersSearch, songwritersMap } from 'songwriters';
-import { Container, SearchInput, Loader } from './styles';
 import { SongwriterCard } from 'components/Songwriter';
 import HighlightTextContext from 'contexts/highlightText';
+import useSearch from 'hooks/useSearch';
+
+import { Container, SearchInput, Loader } from './styles';
 
 const songwriters = allSongwriters.map((songwriter) => {
   return {
-    songwriter,
+    item: songwriter,
     searchResult: {} as SearchResult,
   };
 });
 
-function shouldSearch(value: string) {
-  return value.length > 2;
+function mapResultToSongwriter(searchResult) {
+  return {
+    item: songwritersMap[searchResult.slug],
+    searchResult,
+  };
 }
 
 export default function Home() {
-  const [searchInProgress, setSearchInProgress] = useState(false);
-  const [searchValue, setSearchValue] = useState('');
-  const [searchResult, setSearchResult] = useState<SearchResult[]>([]);
-  const searchFor = useCallback(
-    debounce(
-      (value: string) => {
-        if (shouldSearch(value)) {
-          setSearchResult(songwritersSearch.search(value));
-        }
-        setSearchInProgress(false);
-      },
-      300,
-      { leading: true }
-    ),
-    []
+  const [list, handleChange, searchInProgress, searchValue] = useSearch(
+    songwritersSearch,
+    mapResultToSongwriter,
+    songwriters
   );
-
-  const foundSongwriters = useMemo(
-    () =>
-      searchResult.map((searchResult) => {
-        return {
-          songwriter: songwritersMap[searchResult.slug],
-          searchResult,
-        };
-      }),
-    [searchValue, searchResult]
-  );
-
-  console.log(searchResult);
-
-  const list = shouldSearch(searchValue) ? foundSongwriters : songwriters;
 
   return (
     <Container>
@@ -56,14 +33,12 @@ export default function Home() {
         type="text"
         onChange={(event) => {
           const { value } = event.target;
-          setSearchInProgress(true);
-          setSearchValue(value);
-          searchFor(value);
+          handleChange(value);
         }}
         placeholder="Odszukaj po nazwisku lub esensjonalnej piosence..."
       />
       <Loader $loading={searchInProgress} />
-      {list.map(({ songwriter, searchResult }) => (
+      {list.map(({ item: songwriter, searchResult }) => (
         <HighlightTextContext.Provider
           key={songwriter.slug}
           value={{ searchResult, searchValue }}
