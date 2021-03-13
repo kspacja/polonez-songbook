@@ -1,20 +1,15 @@
 import { useCallback, useState, useMemo } from 'react';
 import MiniSearch, { SearchResult } from 'minisearch';
 import { debounce } from 'lodash';
-import allSongwriters from 'songwriters';
 
 export interface ListItem<T> {
   searchResult: SearchResult;
   item: T;
 }
 
-
-
 function shouldSearch(value: string) {
   return value.length > 2;
 }
-
-
 
 export default function useSearch<T>(
   searchInstance: MiniSearch<T>,
