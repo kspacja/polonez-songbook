@@ -41,7 +41,9 @@ export default function useSearch<T>(
   ]);
 
   const list =
-    shouldSearch(searchValue) && !searchInProgress ? foundList : defaultList;
+    shouldSearch(searchValue) && (!searchInProgress || foundList.length > 0)
+      ? foundList
+      : defaultList;
 
   const handleChange = useCallback(
     (value) => {

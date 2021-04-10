@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useMemo } from 'react';
 import { MatchInfo } from 'minisearch';
 import HighlightContext from '../highlightText';
 
@@ -13,8 +13,6 @@ export function useSearchResult() {
     searchResult: { match = {}, terms = [] },
     searchValue,
   } = useContext(HighlightContext) || { searchResult: {} };
-
-  console.log(useContext(HighlightContext));
 
   return { match, terms, searchValue };
 }

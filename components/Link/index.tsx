@@ -7,7 +7,6 @@ interface LinkProps {
 }
 
 export default function CustomLink({ href, children }: LinkProps) {
-  console.log(href, children);
   return href.startsWith('#') ? (
     <a href={href}>{children}</a>
   ) : (

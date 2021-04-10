@@ -33,7 +33,6 @@ export default function Card({ songwriter }: CardProps) {
   const [isTopListOpen, setIsTopListOpen] = useState<boolean>(false);
   const searchResult = useSearchResult();
   const hasTopsMatch = hasMatch(searchResult, 'tops');
-  const hasNameMatch = hasMatch(searchResult, 'name');
   const hasPlaylistsSongsMatch = hasMatch(searchResult, 'playlistsSongs');
 
   return (
@@ -53,7 +52,7 @@ export default function Card({ songwriter }: CardProps) {
           </AccordionButton>
         </div>
       </HeadContainer>
-      <ShortTop $isOpen={isTopListOpen || (!hasNameMatch && hasTopsMatch)}>
+      <ShortTop $isOpen={isTopListOpen || hasTopsMatch}>
         <TopList>
           {songwriter.tops.map((song) => {
             return (
@@ -64,9 +63,7 @@ export default function Card({ songwriter }: CardProps) {
           })}
         </TopList>
       </ShortTop>
-      {!hasNameMatch && hasPlaylistsSongsMatch && (
-        <PlaylistSongs playlistsSongs={songwriter.playlistsSongs} />
-      )}
+      {hasPlaylistsSongsMatch && <PlaylistSongs songwriter={songwriter} />}
     </Container>
   );
 }
