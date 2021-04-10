@@ -3,6 +3,7 @@ export const theme = {
   fontInvert: '#FFFFFF',
   bg: '#FFFFFF',
   card: '#FFFFFF',
+  border: '#ccc',
   details: '#EB5057',
   outline: '#62B5D9',
   button: {

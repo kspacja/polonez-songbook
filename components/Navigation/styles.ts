@@ -7,6 +7,7 @@ export const NavContainer = styled.nav`
   position: fixed;
   bottom: 3rem;
   left: 1.5rem;
+  z-index: 10;
 
   a {
     color: ${color('fontInvert')};

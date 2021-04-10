@@ -1,7 +1,13 @@
 {
   "name": "Krzesimir Dębski",
   "description": "*Just* a mediaUrl: https://reactjs.com.",
-  "playlists": [],
+  "playlists": [
+    {
+      "author": "Krzysztof Ciach",
+      "mediaUrl": "https://open.spotify.com/playlist/3og8NnfCoATwYWuHYpLfiK",
+      "name": "[BEST] Dębski"
+    }
+  ],
   "tops": [
     {
       "artist": "Anna Jurksztowicz",

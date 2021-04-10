@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { useSprings, useSpring } from 'react-spring';
-
+import Link from 'components/Link';
 import { NavContainer, Trigger, BurgerLine, MenuList } from './styles';
 
 function initRight(index: number) {
@@ -66,10 +66,9 @@ export default function Navigation({ items }: NavigationProps) {
       </Trigger>
       <MenuList style={menuListStyle}>
         {items.map(({ href, text }) => (
-          <li key={href}>
-            <a href={href} onClick={() => setOpen((open) => !open)}>
-              {text}
-            </a>
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events
+          <li key={href} onClick={() => setOpen((open) => !open)}>
+            <Link href={href}>{text}</Link>
           </li>
         ))}
       </MenuList>

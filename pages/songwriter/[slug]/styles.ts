@@ -39,7 +39,7 @@ export const Text = styled(Markdown)`
 `;
 
 export const Name = styled.h1`
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   font-weight: 300;
   margin: 0;

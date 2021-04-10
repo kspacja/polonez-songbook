@@ -1,69 +1,64 @@
-import { MatchInfo } from 'minisearch';
-import { useContext, useMemo } from 'react';
-import HighlightContext from './';
-
+import { useMemo } from 'react';
+import getHighlightRanges from './getHighlightsRanges';
+import { useSearchResult } from './hooks';
 import { Highlight } from './styles';
 
-interface HighlightTextProps {
-  path: string;
-  children: string;
+export interface HighlightTextProps {
+  children: string | string[];
+  highlightRanges?: number[];
 }
 
-function highlightToken(token: string, searchValue: string, index: number) {
-  const values = searchValue.split(' ');
+function stripHtml(html: string) {
+  const tmp =
+    typeof document !== 'undefined'
+      ? document.createElement('div')
+      : { innerHTML: '', textContent: '', innerText: '' };
 
-  const valueRegExp = values
-    .map((v) => new RegExp(v, 'i'))
-    .find((rx) => rx.test(token));
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || tmp.innerHTML || '';
+}
 
-  const [match] = token.match(valueRegExp) || [];
-  const key = `${token}-${index}`;
+function getHighlightedText(text, highlightRanges: number[]) {
+  let cursor = 0;
+  let isTagClose = false;
 
-  if (!match) {
-    return (
-      <span key={key}>
-        <Highlight>{token}</Highlight>{' '}
-      </span>
-    );
-  } else {
-    const [head, tail] = token.split(valueRegExp);
-    return (
-      <span key={key}>
-        {head}
-        <Highlight>{match}</Highlight>
-        {tail}{' '}
-      </span>
-    );
+  let highlightedText = Array.from(text)
+    .map((letter, index) => {
+      let prefix = '';
+
+      if (highlightRanges[cursor] === index) {
+        cursor += 1;
+        const tagStart = isTagClose ? '/' : '';
+        prefix = `<${tagStart}em>`;
+        isTagClose = !isTagClose;
+      }
+
+      return prefix + letter;
+    })
+    .join('');
+
+  if (highlightRanges[cursor] >= text.length) {
+    highlightedText += '</em>';
   }
+
+  return highlightedText;
 }
 
-function getHighlightedTokens(
-  text: string,
-  path: string,
-  match: MatchInfo,
-  searchValue: string
-) {
-  const termsRegExps = Object.keys(match)
-    .filter((term) => match[term].includes(path))
-    .map((term) => new RegExp(`["')(]?${term}[,.:;"'?!)(]?`, 'i'));
+export default function HighlightText({
+  children,
+  highlightRanges,
+}: HighlightTextProps) {
+  const { match, searchValue, terms } = useSearchResult();
 
-  const tokens = text.split(' ');
+  let text = typeof children === 'string' ? children : children.join('');
+  text = useMemo(() => stripHtml(text), [text]);
 
-  return tokens.map((token, index) => {
-    return termsRegExps.some((regExp) => regExp.test(token))
-      ? highlightToken(token, searchValue, index)
-      : token + ' ';
-  });
-}
-
-export default function HighlightText({ children, path }: HighlightTextProps) {
-  const { searchResult, searchValue = '' } = useContext(HighlightContext) || {};
-  const { match } = searchResult || {};
-
-  const highlightedTokens = useMemo(
-    () => getHighlightedTokens(children, path, match || {}, searchValue),
-    [children, path, match]
+  const highlights = useMemo(
+    () => highlightRanges || getHighlightRanges(text, searchValue, terms),
+    [children, searchValue, match]
   );
 
-  return <>{highlightedTokens}</>;
+  const highlightedText = getHighlightedText(text, highlights);
+
+  return <Highlight dangerouslySetInnerHTML={{ __html: highlightedText }} />;
 }

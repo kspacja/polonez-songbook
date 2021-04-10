@@ -1,22 +1,27 @@
 import snakeCase from 'lodash/snakeCase';
 import MiniSearch from 'minisearch';
-import { Songwriter } from 'types';
-import getArtistAndTitle from 'utils/getArtistAndTitle';
+import getPhrases from 'utils/getPhrases';
+import { Songwriter, Song } from 'types';
+import spotifyPlaylists from './spotify-playlists.auto.json';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-const songwritersFile = require.context('./', true, /\.json$/);
+const songwritersFile = require.context('./', true, /^\.\/[^.]+\.json$/);
 
 const songwriters: Songwriter[] = songwritersFile
   .keys()
   .map((file) => {
     return songwritersFile(file);
   })
-  .map((writer) => ({
-    ...writer,
-    id: snakeCase(writer.name),
-    slug: snakeCase(writer.name),
-  }));
+  .map((writer) => {
+    const slug = snakeCase(writer.name);
+    return {
+      ...writer,
+      id: slug,
+      slug: slug,
+      playlistsSongs: spotifyPlaylists[slug],
+    };
+  });
 
 export default songwriters;
 
@@ -30,19 +35,42 @@ export const songwritersMap: {
   {}
 );
 
+const splitPattern = /[,(){}:;,."' ]/g;
+const splitTops = /; |;/g;
+
 export const songwritersSearch = new MiniSearch({
-  fields: ['name', 'tops'],
+  fields: ['name', 'tops', 'playlistsSongs'],
   storeFields: ['slug'],
+  tokenize: (text: string, fieldName) => {
+    const tokens = text.split(splitPattern).filter((token) => token.length > 0);
+    switch (fieldName) {
+      case 'name':
+        return [...tokens, text];
+      case 'tops':
+      case 'playlistsSongs':
+        return [...tokens, ...text.split(splitTops)];
+      default:
+        return tokens;
+    }
+  },
   searchOptions: {
     boost: { name: 2 },
-    combineWith: 'AND',
     prefix: true,
     fuzzy: 0.15,
+    tokenize: getPhrases,
   },
   extractField: (document: Songwriter, fieldName) => {
     switch (fieldName) {
       case 'tops':
-        return document.tops.map(getArtistAndTitle).join('; ');
+        return document.tops
+          .map((song: Song) => {
+            return `${song.artist};${song.title}`;
+          })
+          .join('; ');
+      case 'playlistsSongs':
+        return document.playlistsSongs
+          .map(({ artist, title, album }) => `${artist};${title};${album}`)
+          .join('; ');
       default:
         return document[fieldName];
     }

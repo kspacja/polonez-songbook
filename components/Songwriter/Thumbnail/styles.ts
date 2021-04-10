@@ -10,6 +10,6 @@ export const Image = styled.figure`
   position: relative;
   width: ${(props: ImageProps) => props.width}px;
   height: ${(props: ImageProps) => props.height}px;
-  min-width: 50px;
+  min-width: ${(props: ImageProps) => props.width}px;
   overflow: hidden;
 `;

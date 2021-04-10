@@ -24,6 +24,8 @@ export default function useSearch<T>(
       (value: string) => {
         if (shouldSearch(value)) {
           setSearchResult(searchInstance.search(value));
+        } else {
+          setSearchResult([]);
         }
         setSearchInProgress(false);
       },
@@ -38,7 +40,8 @@ export default function useSearch<T>(
     searchResult,
   ]);
 
-  const list = shouldSearch(searchValue) ? foundList : defaultList;
+  const list =
+    shouldSearch(searchValue) && !searchInProgress ? foundList : defaultList;
 
   const handleChange = useCallback(
     (value) => {

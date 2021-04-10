@@ -1,10 +1,29 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+import color from 'utils/color';
 import hexToRgba from 'utils/hexToRgba';
 
-export const Container = styled.div`
+const container = css`
   margin: 0 auto;
   padding: 0 1rem;
   max-width: calc(500px + 2rem);
+`;
+
+export const Container = styled.div`
+  ${container}
+`;
+
+export const Header = styled.h1`
+  display: flex;
+  align-items: center;
+
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: normal;
+
+  ${container};
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.65rem;
 `;
 
 export const SearchInput = styled.input`
@@ -52,4 +71,19 @@ export const Loader = styled.div<LoaderProps>`
     left: 0;
     bottom: 0;
   }
+`;
+
+export const Image = styled.figure`
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin-right: 1rem;
+`;
+
+export const HeaderText = styled.div`
+  border-bottom: solid 1px ${color('details')};
+  padding: 0.5rem;
+  flex: 1;
 `;

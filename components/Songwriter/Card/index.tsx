@@ -1,8 +1,14 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
+import Link from 'next/link';
+
 import { Songwriter } from 'types';
+import { useSearchResult } from 'contexts/highlightText/hooks';
+import { hasMatch } from 'contexts/highlightText/utils';
+
+import PlaylistSongs from 'components/PlaylistSongs';
 import { SongwriterThumbnail } from 'components/Songwriter';
 import { SongHead } from 'components/Song';
-import HighlightContext from 'contexts/highlightText';
+
 import HighlightText from 'contexts/highlightText/component';
 
 import {
@@ -18,28 +24,28 @@ type CardProps = {
   songwriter: Songwriter;
 };
 
-function hasMatch(path: string) {
-  const {
-    searchResult: { match = {}, terms = [] },
-  } = useContext(HighlightContext) || { searchResult: {} };
-
-  return terms.some((term) => {
-    return match[term].includes(path);
-  });
-}
-
+/*
+ * @TODO:
+ * 1. Refactor playlists songs list
+ * 3. Refactor highlighting
+ */
 export default function Card({ songwriter }: CardProps) {
   const [isTopListOpen, setIsTopListOpen] = useState<boolean>(false);
-  const hasTopsMatch = hasMatch('tops');
+  const searchResult = useSearchResult();
+  const hasTopsMatch = hasMatch(searchResult, 'tops');
+  const hasNameMatch = hasMatch(searchResult, 'name');
+  const hasPlaylistsSongsMatch = hasMatch(searchResult, 'playlistsSongs');
 
   return (
     <Container>
       <HeadContainer>
         <SongwriterThumbnail songwriter={songwriter} size={75} />
         <div style={{ flex: 2 }}>
-          <Name href={`/songwriter/${songwriter.slug}`}>
-            <HighlightText path="name">{songwriter.name}</HighlightText>
-          </Name>
+          <Link href={`/songwriter/${songwriter.slug}`} passHref>
+            <Name>
+              <HighlightText>{songwriter.name}</HighlightText>
+            </Name>
+          </Link>
           <AccordionButton
             onClick={() => setIsTopListOpen((isOpen) => !isOpen)}
           >
@@ -47,7 +53,7 @@ export default function Card({ songwriter }: CardProps) {
           </AccordionButton>
         </div>
       </HeadContainer>
-      <ShortTop $isOpen={isTopListOpen || hasTopsMatch}>
+      <ShortTop $isOpen={isTopListOpen || (!hasNameMatch && hasTopsMatch)}>
         <TopList>
           {songwriter.tops.map((song) => {
             return (
@@ -58,6 +64,9 @@ export default function Card({ songwriter }: CardProps) {
           })}
         </TopList>
       </ShortTop>
+      {!hasNameMatch && hasPlaylistsSongsMatch && (
+        <PlaylistSongs playlistsSongs={songwriter.playlistsSongs} />
+      )}
     </Container>
   );
 }
