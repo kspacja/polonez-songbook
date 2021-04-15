@@ -3,6 +3,7 @@ import MiniSearch from 'minisearch';
 import getPhrases from 'utils/getPhrases';
 import { Songwriter, Song } from 'types';
 import spotifyPlaylists from './spotify-playlists.auto.json';
+import getTokens from 'utils/getTokens';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -35,14 +36,13 @@ export const songwritersMap: {
   {}
 );
 
-const splitPattern = /[,(){}:;,."' ]/g;
 const splitTops = /; |;/g;
 
 export const songwritersSearch = new MiniSearch({
   fields: ['name', 'tops', 'playlistsSongs'],
   storeFields: ['slug'],
   tokenize: (text: string, fieldName) => {
-    const tokens = text.split(splitPattern).filter((token) => token.length > 0);
+    const tokens = getTokens(text);
     switch (fieldName) {
       case 'name':
         return [...tokens, text];

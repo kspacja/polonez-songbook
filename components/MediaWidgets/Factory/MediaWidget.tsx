@@ -1,4 +1,5 @@
-import { Container, Wrapper } from './styles';
+import HighlightText from 'contexts/highlightText/component';
+import { Container, Wrapper, Songwriter } from './styles';
 
 type MediaWidgetProps = {
   mediaUrl: string;
@@ -9,6 +10,7 @@ type MediaWidgetProps = {
   getSrcUrl: (string) => string;
   pattern: RegExp;
   title?: string;
+  songwriter?: string;
 };
 
 export default function MediaWidget({
@@ -16,6 +18,7 @@ export default function MediaWidget({
   pattern,
   getSrcUrl,
   title,
+  songwriter,
   iframeAttrs,
 }: MediaWidgetProps) {
   const match = mediaUrl.match(pattern) || { groups: { id: null } };
@@ -27,7 +30,10 @@ export default function MediaWidget({
 
   return (
     <Wrapper>
-      {title}
+      <Songwriter>
+        <HighlightText>{songwriter}</HighlightText>
+      </Songwriter>
+      <HighlightText>{title}</HighlightText>{' '}
       <Container>
         <iframe
           title={iframeAttrs.title}

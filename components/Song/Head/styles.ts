@@ -13,4 +13,9 @@ export const Container = styled.div`
   }
 `;
 
+export const Songwriter = styled.div`
+  font-size: 1.1rem;
+  vertical-align: top;
+`;
+
 export const Title = styled.span``;

@@ -1,0 +1,16 @@
+{
+  "hits": [
+    { 
+      "artist": "Krystyna Prońko", 
+      "title": "Jesteś lekiem na całe zło", 
+      "songwriter": "Marek Stefankiewicz", 
+      "mediaUrl": "https://www.youtube.com/watch?v=HeyX1H3HTVQ"
+    },
+    { 
+      "artist": "Kayah", 
+      "title": "Fleciki", 
+      "songwriter": "Filip Sojka",
+      "mediaUrl": "https://www.youtube.com/watch?v=pbLY6Qyyc_8"
+    }
+  ]
+}

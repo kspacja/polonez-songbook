@@ -8,3 +8,8 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   padding-bottom: 1.25rem;
 `;
+
+export const Songwriter = styled.em`
+  display: block;
+  font-size: 1.3rem;
+`;

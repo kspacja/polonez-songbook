@@ -1,17 +1,13 @@
-import { SearchResult } from 'minisearch';
 import allSongwriters, { songwritersSearch, songwritersMap } from 'songwriters';
+import getDefaultResultItem from 'utils/getDefaultResultItem';
+
 import { SongwriterCard } from 'components/Songwriter';
 import HighlightTextContext from 'contexts/highlightText';
 import useSearch from 'hooks/useSearch';
 
 import { Container, SearchInput, Loader } from './styles';
 
-const songwriters = allSongwriters.map((songwriter) => {
-  return {
-    item: songwriter,
-    searchResult: {} as SearchResult,
-  };
-});
+const songwriters = allSongwriters.map(getDefaultResultItem);
 
 function mapResultToSongwriter(searchResult) {
   return {

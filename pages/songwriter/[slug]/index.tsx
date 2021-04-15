@@ -1,27 +1,36 @@
 import { useRouter } from 'next/router';
 import DefaultErrorPage from 'next/error';
-import Link from 'components/Link';
 
 import { songwritersMap } from 'songwriters';
+import getMediaName from 'utils/getMediaName';
+
+import Link from 'components/Link';
 import MediaWidget from 'components/MediaWidgets';
 import Playlists from 'components/Playlists';
 
 import { SongwriterThumbnail } from 'components/Songwriter';
 import Breadcrumbs from 'components/Breadcrumbs';
-import getMediaName from 'utils/getMediaName';
+import Navigation from 'components/Navigation';
+import Feedback from 'components/Feedback';
+import { Container } from 'pages/styles';
 
 import {
   Name,
   TopsColumn,
   PlaylistColumn,
   TextsColumn,
-  Container,
   Text,
   ColumnContainer,
   Anchor,
   Header,
 } from './styles';
-import Navigation from 'components/Navigation';
+
+const FEEDBACK_HINT = (
+  <>
+    Masz ciekawy artykuł o tym songwriterze, jego płycie, piosence? <br />
+    Widzisz błąd, literówkę? Napisz do mnie!
+  </>
+);
 
 const navigationItems = [
   { href: '#tops', text: 'Esensja' },
@@ -32,13 +41,7 @@ const navigationItems = [
 export default function SongwriterView() {
   const {
     query: { slug },
-    isFallback,
-    isReady,
   } = useRouter();
-
-  if (isFallback || !isReady) {
-    return 'Wczytywanko...';
-  }
 
   const songwriter = songwritersMap[slug as string];
 
@@ -87,6 +90,11 @@ export default function SongwriterView() {
           <Anchor id="short-note" />
           <Text>{songwriter.description}</Text>
         </TextsColumn>
+
+        <Feedback
+          feedbackHint={FEEDBACK_HINT}
+          metaData={`[Songwriter: ${songwriter.name}]`}
+        />
       </ColumnContainer>
     </Container>
   );

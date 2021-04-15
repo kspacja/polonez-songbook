@@ -4,7 +4,7 @@ import { useSearchResult } from './hooks';
 import { Highlight } from './styles';
 
 export interface HighlightTextProps {
-  children: string | string[];
+  children?: string | string[];
   highlightRanges?: number[];
 }
 
@@ -45,7 +45,7 @@ function getHighlightedText(text, highlightRanges: number[]) {
 }
 
 export default function HighlightText({
-  children,
+  children = [],
   highlightRanges,
 }: HighlightTextProps) {
   const { match, searchValue, terms } = useSearchResult();

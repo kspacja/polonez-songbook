@@ -2,11 +2,7 @@ import styled from 'styled-components';
 import Markdown from 'components/Markdown';
 import color from 'utils/color';
 
-export const Container = styled.article`
-  margin: 0 auto;
-  padding: 1rem;
-  max-width: calc(500px + 2rem);
-`;
+export const Container = styled.article``;
 
 const BarBase = styled.div`
   background: ${color('details')};

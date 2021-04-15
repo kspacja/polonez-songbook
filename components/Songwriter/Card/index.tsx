@@ -8,27 +8,16 @@ import { hasMatch } from 'contexts/highlightText/utils';
 import PlaylistSongs from 'components/PlaylistSongs';
 import { SongwriterThumbnail } from 'components/Songwriter';
 import { SongHead } from 'components/Song';
+import { Button, AccordionContent } from 'components/styled';
 
 import HighlightText from 'contexts/highlightText/component';
 
-import {
-  Container,
-  Name,
-  TopList,
-  ShortTop,
-  HeadContainer,
-  AccordionButton,
-} from './styles';
+import { Container, Name, TopList, HeadContainer } from './styles';
 
 type CardProps = {
   songwriter: Songwriter;
 };
 
-/*
- * @TODO:
- * 1. Refactor playlists songs list
- * 3. Refactor highlighting
- */
 export default function Card({ songwriter }: CardProps) {
   const [isTopListOpen, setIsTopListOpen] = useState<boolean>(false);
   const searchResult = useSearchResult();
@@ -45,14 +34,15 @@ export default function Card({ songwriter }: CardProps) {
               <HighlightText>{songwriter.name}</HighlightText>
             </Name>
           </Link>
-          <AccordionButton
-            onClick={() => setIsTopListOpen((isOpen) => !isOpen)}
-          >
+          <Button onClick={() => setIsTopListOpen((isOpen) => !isOpen)}>
             Esensjonalne piosenki
-          </AccordionButton>
+          </Button>
         </div>
       </HeadContainer>
-      <ShortTop $isOpen={isTopListOpen || hasTopsMatch}>
+      <AccordionContent
+        $maxHeight={200}
+        $isOpen={isTopListOpen || hasTopsMatch}
+      >
         <TopList>
           {songwriter.tops.map((song) => {
             return (
@@ -62,7 +52,7 @@ export default function Card({ songwriter }: CardProps) {
             );
           })}
         </TopList>
-      </ShortTop>
+      </AccordionContent>
       {hasPlaylistsSongsMatch && <PlaylistSongs songwriter={songwriter} />}
     </Container>
   );

@@ -14,11 +14,9 @@ export default function ArtistAndTitle({
 }: ArtistAndTitleProps) {
   return (
     <>
-      <HighlightText path="tops">
-        {getArtistWithSeparator(artist)}
-      </HighlightText>
+      <HighlightText>{getArtistWithSeparator(artist)}</HighlightText>
       <TitleComp>
-        <HighlightText path="tops">{title}</HighlightText>
+        <HighlightText>{title}</HighlightText>
       </TitleComp>
     </>
   );

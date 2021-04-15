@@ -4,7 +4,7 @@ function getTokenLength(token: string) {
   return token.replace(/[,.:;]/, '').length;
 }
 
-export default function getPhrases(query: string) {
+export default function getPhrases(query = '') {
   const match = query.match(phrasePattern);
 
   if (!match) {

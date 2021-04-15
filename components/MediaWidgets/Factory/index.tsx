@@ -1,19 +1,19 @@
-import { Song, Playlist } from 'types';
+import { Song, HitSong, Playlist } from 'types';
 import getArtistAndTitle from 'utils/getArtistAndTitle';
 
 import MediaWidget from './MediaWidget';
 
-type FactoryProps = {
+interface FactoryProps {
   getUrl: (id: string) => string;
   pattern: RegExp;
   addonAttrs: {
     [name: string]: string | boolean;
   };
-};
+}
 
-type SongWidgetProps = {
-  song: Song;
-};
+interface SongWidgetProps {
+  song: Song | HitSong;
+}
 
 export function SongWidgetFactory({
   getUrl,
@@ -29,6 +29,7 @@ export function SongWidgetFactory({
         pattern={pattern}
         getSrcUrl={getUrl}
         title={title}
+        songwriter={'songwriter' in song ? song.songwriter : ''}
         iframeAttrs={{
           title,
           width: '100%',
@@ -40,9 +41,9 @@ export function SongWidgetFactory({
   };
 }
 
-type PlaylistWidgetProps = {
+interface PlaylistWidgetProps {
   playlist: Playlist;
-};
+}
 
 export function PlaylistWidgetFactory({
   getUrl,

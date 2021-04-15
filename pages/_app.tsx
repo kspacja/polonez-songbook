@@ -1,14 +1,26 @@
 import { useState, useEffect } from 'react';
 import NextImage from 'next/Image';
+import { useRouter } from 'next/router';
+
+import Link from 'components/Link';
+import PageLoading from 'components/PageLoading';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
 
 import { theme } from './_themes';
 import GlobalStyles from './_globalStyles';
-import { Header, Image, HeaderText } from './styles';
+import { Header, Image, HeaderText, Navigation } from './styles';
+
+const mainNavigation = [
+  { text: 'Strzały w 10', url: '/hits' },
+  { text: 'O projekcie', url: '/about' },
+];
 
 function MyApp({ Component, pageProps }) {
+  const { isFallback, isReady } = useRouter();
   const [mode, setMode] = useState(theme);
+
+  const isLoading = isFallback || !isReady;
 
   useEffect(() => {
     const isDark =
@@ -39,7 +51,14 @@ function MyApp({ Component, pageProps }) {
         </Image>
         <HeaderText>polonez-songbook.pl</HeaderText>
       </Header>
-      <Component {...pageProps} />
+      <Navigation>
+        {mainNavigation.map(({ text, url }) => (
+          <li key={url}>
+            <Link href={url}>{text}</Link>
+          </li>
+        ))}
+      </Navigation>
+      {isLoading ? <PageLoading /> : <Component {...pageProps} />}
     </ThemeProvider>
   );
 }

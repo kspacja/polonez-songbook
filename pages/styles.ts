@@ -22,14 +22,13 @@ export const Header = styled.h1`
 
   ${container};
   margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.65rem;
+  padding-bottom: 0;
 `;
 
 export const SearchInput = styled.input`
   width: 100%;
   padding: 0.5rem;
-  border: solid 1px #ccc;
+  border: solid 1px ${color('border')};
   border-radius: 0;
 
   &:focus {
@@ -49,11 +48,14 @@ const rotate = keyframes`
 
 interface LoaderProps {
   $loading: boolean;
+  $fixed?: boolean;
 }
 
 export const Loader = styled.div<LoaderProps>`
-  height: 4px;
-  position: relative;
+  height: ${(props) => (props.$fixed ? 8 : 4)}px;
+  position: ${(props) => (props.$fixed ? 'fixed' : 'relative')};
+  bottom: ${(props) => (props.$fixed ? 27 : 0)}px;
+  width: 100%;
   overflow: hidden;
 
   &,
@@ -86,4 +88,27 @@ export const HeaderText = styled.div`
   border-bottom: solid 1px ${color('details')};
   padding: 0.5rem;
   flex: 1;
+`;
+
+export const Navigation = styled.div`
+  ${container};
+  list-style: none;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+
+  li {
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+
+  li:after {
+    content: '|';
+    padding: 0 0.25rem;
+  }
+
+  li:last-child:after {
+    content: '';
+  }
 `;

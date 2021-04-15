@@ -11,6 +11,11 @@ export interface AlbumTrack extends Track {
   album: string;
 }
 
+export interface HitSong extends Song {
+  id: string;
+  songwriter: string;
+}
+
 export interface Playlist {
   author: string;
   mediaUrl: string;
@@ -18,6 +23,7 @@ export interface Playlist {
 }
 
 export interface Songwriter {
+  id: string;
   name: string;
   slug: string;
   tops: Song[];
