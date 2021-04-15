@@ -2,11 +2,11 @@ import { Container, Loader } from 'pages/styles';
 
 export default function PageLoading() {
   return (
-    <>
-      <Loader $loading $fixed />
+    <div>
+      {/* <Loader $loading $fixed /> */}
       <Container>
         <h3>Wczytywanko...</h3>
       </Container>
-    </>
+    </div>
   );
 }

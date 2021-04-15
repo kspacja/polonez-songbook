@@ -90,7 +90,7 @@ export const HeaderText = styled.div`
   flex: 1;
 `;
 
-export const Navigation = styled.div`
+export const Navigation = styled.ul`
   ${container};
   list-style: none;
   display: flex;

@@ -1,15 +1,20 @@
 import { useState, useEffect } from 'react';
 import NextImage from 'next/Image';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
+import dynamic from 'next/dynamic';
 
 import Link from 'components/Link';
-import PageLoading from 'components/PageLoading';
-import Head from 'next/head';
+
 import { ThemeProvider } from 'styled-components';
 
 import { theme } from './_themes';
 import GlobalStyles from './_globalStyles';
 import { Header, Image, HeaderText, Navigation } from './styles';
+
+const PageLoading = dynamic(() => import('components/PageLoading'), {
+  ssr: false,
+});
 
 const mainNavigation = [
   { text: 'Strzały w 10', url: '/hits' },
