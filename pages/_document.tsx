@@ -1,5 +1,13 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
+const GA_SCRIPT = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '${process.env.GA_ID}');
+`;
+
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -14,6 +22,15 @@ class MyDocument extends Document {
           <link
             href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
             rel="stylesheet"
+          />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-1R25K5SR16"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: GA_SCRIPT,
+            }}
           />
         </Head>
         <body>

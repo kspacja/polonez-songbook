@@ -14,10 +14,10 @@ let waitToNext = false;
 
 async function sendEmail(feedback: string, metaData: string, from: string) {
   return emailjs.send(
-    'service_myyfhk2',
-    'template_6mzv68t',
+    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
     { feedback, metaData, from },
-    'user_Qvh1SpLlghHF8sSPelau2'
+    process.env.NEXT_PUBLIC_EMAILJS_USER_ID
   );
 }
 

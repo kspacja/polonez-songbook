@@ -1,3 +1,4 @@
+import { SearchResult } from 'minisearch';
 import allSongwriters, { songwritersSearch, songwritersMap } from 'songwriters';
 import getDefaultResultItem from 'utils/getDefaultResultItem';
 
@@ -16,11 +17,18 @@ function mapResultToSongwriter(searchResult) {
   };
 }
 
+function mapResultToGA(searchResult: SearchResult) {
+  return {
+    item_id: searchResult.slug,
+  };
+}
+
 export default function Home() {
   const [list, handleChange, searchInProgress, searchValue] = useSearch(
     songwritersSearch,
     mapResultToSongwriter,
-    songwriters
+    songwriters,
+    mapResultToGA
   );
 
   return (

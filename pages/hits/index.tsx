@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { SearchResult } from 'minisearch';
 
 import allHits, { hitsSearch } from 'hits';
 
@@ -22,6 +23,12 @@ function mapResult(searchResult) {
   };
 }
 
+function mapResultToGA(searchResult: SearchResult) {
+  return {
+    item_name: `${searchResult.songwriter}: ${searchResult.artist} - ${searchResult.title}`,
+  };
+}
+
 export default function SongwriterView() {
   const [descriptionOpen, setDescriptionOpen] = useState(false);
   const [
@@ -29,7 +36,7 @@ export default function SongwriterView() {
     handleChange,
     searchInProgress,
     searchValue,
-  ] = useSearch<HitSong>(hitsSearch, mapResult, hits);
+  ] = useSearch<HitSong>(hitsSearch, mapResult, hits, mapResultToGA);
 
   return (
     <Container>
