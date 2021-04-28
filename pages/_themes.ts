@@ -4,6 +4,7 @@ export const theme = {
   bg: '#FFFFFF',
   card: '#FFFFFF',
   border: '#ccc',
+  others: '#f1f1f1',
   details: '#EB5057',
   outline: '#62B5D9',
   button: {

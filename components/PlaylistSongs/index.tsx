@@ -7,26 +7,32 @@ import {
   PlaylistSongList,
   PlaylistSongListHeader,
   PlaylistSong,
+  Info,
 } from './styles';
 
 import getHighlightRanges from 'contexts/highlightText/getHighlightsRanges';
+import useTooltip from 'hooks/useTooltip';
 
 export interface PlaylistSongsProps {
   songwriter: Songwriter;
 }
 
 export default function PlaylistSongs({ songwriter }: PlaylistSongsProps) {
+  useTooltip();
+
   const { searchValue, terms } = useSearchResult();
 
   const songsWithHighlightRanges = useMemo(
     () =>
       songwriter.playlistsSongs
-        .map(({ artist, title, album }: AlbumTrack) => ({
+        .map(({ artist, title, album, year }: AlbumTrack) => ({
           titleAndAlbum: `${title} (${album})`,
           artist,
+          year,
         }))
-        .map(({ artist, titleAndAlbum }) => ({
+        .map(({ artist, titleAndAlbum, year }) => ({
           artist,
+          year,
           titleAndAlbum,
           artistHighlightRanges:
             artist !== songwriter.name
@@ -49,12 +55,21 @@ export default function PlaylistSongs({ songwriter }: PlaylistSongsProps) {
     <PlaylistSongList>
       {songsWithHighlightRanges.length > 0 && (
         <PlaylistSongListHeader>
-          Znalezione w playlistach:
+          Znalezione w playlistach:{' '}
+          <Info data-tip="Piosenki na tej liście pochodzą ze spotify. <br/>Dla tego tez brakuje autorów słów, a lata mogą niedokładne">
+            [info]
+          </Info>
         </PlaylistSongListHeader>
       )}
       {songsWithHighlightRanges.map(
         (
-          { titleAndAlbum, highlightRanges, artist, artistHighlightRanges },
+          {
+            titleAndAlbum,
+            highlightRanges,
+            artist,
+            artistHighlightRanges,
+            year,
+          },
           index
         ) => (
           <PlaylistSong key={`${titleAndAlbum}-${index}`}>
@@ -64,6 +79,7 @@ export default function PlaylistSongs({ songwriter }: PlaylistSongsProps) {
             <HighlightText highlightRanges={highlightRanges}>
               {titleAndAlbum}
             </HighlightText>
+            {year && ` [${year}]`}
           </PlaylistSong>
         )
       )}

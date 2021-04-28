@@ -22,6 +22,9 @@ const songwriters: Songwriter[] = songwritersFile
       slug: slug,
       playlistsSongs: spotifyPlaylists[slug],
     };
+  })
+  .sort((swA, swB) => {
+    return swA.name.localeCompare(swB.name);
   });
 
 export default songwriters;
@@ -64,7 +67,7 @@ export const songwritersSearch = new MiniSearch({
       case 'tops':
         return document.tops
           .map((song: Song) => {
-            return `${song.artist};${song.title}`;
+            return `${song.artist};${song.title};${song.lyrics}`;
           })
           .join('; ');
       case 'playlistsSongs':

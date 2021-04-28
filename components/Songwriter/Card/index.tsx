@@ -40,7 +40,7 @@ export default function Card({ songwriter }: CardProps) {
         </div>
       </HeadContainer>
       <AccordionContent
-        $maxHeight={200}
+        $maxHeight={250}
         $isOpen={isTopListOpen || hasTopsMatch}
       >
         <TopList>

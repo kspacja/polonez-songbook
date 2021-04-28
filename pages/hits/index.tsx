@@ -13,6 +13,7 @@ import useSearch from 'hooks/useSearch';
 import HighlightTextContext from 'contexts/highlightText';
 
 import { List, Description } from './styles';
+import Feedback from 'components/Feedback';
 
 const hits = allHits.map(getDefaultResultItem);
 
@@ -73,13 +74,20 @@ export default function SongwriterView() {
               key={item.mediaUrl}
               value={{ searchResult, searchValue }}
             >
-              <SongHead song={item} />
+              <li>
+                <SongHead song={item} />
+              </li>
             </HighlightTextContext.Provider>
           );
         })}
 
         {list.length === 0 && 'No, nie udało się nic znaleźć'}
       </List>
+
+      <Feedback
+        feedbackHint="Widzisz błąd, literówkę, nie działa link do piosenki? Napisz do mnie!"
+        metaData={`[Hits]`}
+      />
     </Container>
   );
 }

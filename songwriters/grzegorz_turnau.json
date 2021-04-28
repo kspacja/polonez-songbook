@@ -1,6 +1,10 @@
 {
   "name": "Grzegorz Turnau",
-  "description": "### __Grzegorz Jerzy Turnau__ *(ur. 31 lipca 1967 w Krakowie)*\n\n__Główny instrument__: fortepian",
+  "description": [
+    "Borys Dejnarowicz o płytcie \"Fabryce Klamek\": https://www.substanceonly.net/grzegorz-turnau",
+    "Jędrzej Michalak o płycie \"To tu, to tam\" w ramach rankingu Najlepsze polskie płyty XX wieku: http://www.porcys.com/ranking/najlepsze-polskie-plyty-xx-wieku/3/",
+    "Michał Hoffman o piosenkce \"To tu, to tam\" w ramach rankingu Polskie Piosenki Wszech Czasów: http://www.screenagers.pl/index.php?service=xtras&action=show&id=331"
+  ],
   "playlists": [{
     "author": "Krzysztof Ciach",
     "mediaUrl": "https://open.spotify.com/playlist/6wrrFxlFxfOQlZZK96xZj0",
@@ -10,27 +14,37 @@
     {
       "artist": "Grzegorz Turnau",
       "title": "Pamięć",
-      "mediaUrl": "https://www.youtube.com/watch?v=sXRcQvqaKHc"
+      "mediaUrl": "https://www.youtube.com/watch?v=sXRcQvqaKHc",
+      "lyrics": "Grzegorz Turnau",
+      "year": 1993
     },
     {
       "artist": "Grzegorz Turnau",
-      "title": "Znów wędrujemy",
-      "mediaUrl": "https://www.youtube.com/watch?v=CCH3dZ3sYA8"
+      "title": "Przepakowania",
+      "mediaUrl": "https://open.spotify.com/track/2VhOL7XmATCFTasTH8a49t?si=OfaZWZ2KRKaFMJnCHMxPqw",
+      "lyrics": "Michał Zabłocki",
+      "year": 2010
     },
     {
       "artist": "Grzegorz Turnau",
       "title": "To tu, to tam",
-      "mediaUrl": "https://www.youtube.com/watch?v=mIx5mRMOzTc"
+      "mediaUrl": "https://www.youtube.com/watch?v=mIx5mRMOzTc",
+      "lyrics": "Michał Zabłocki",
+      "year": 1995
     },
     {
       "artist": "Grzegorz Turnau",
       "title": "Liryka, liryka",
-      "mediaUrl": "https://www.youtube.com/watch?v=1wVRml4L7WA"
+      "mediaUrl": "https://www.youtube.com/watch?v=1wVRml4L7WA",
+      "lyrics": "Konstanty Ildefons Gałczyński",
+      "year": 2002
     },
     {
       "artist": "Grzegorz Turnau",
       "title": "Do wód",
-      "mediaUrl": "https://www.youtube.com/watch?v=kxtzGoGg_XQ"
+      "mediaUrl": "https://www.youtube.com/watch?v=kxtzGoGg_XQ",
+      "lyrics": "Leszek Aleksander Moczulski",
+      "year": 2002
     }
 
   ]

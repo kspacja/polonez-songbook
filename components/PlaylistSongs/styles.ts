@@ -12,3 +12,7 @@ export const PlaylistSongListHeader = styled.h3`
 `;
 
 export const PlaylistSong = styled.li``;
+
+export const Info = styled.span`
+  font-size: 0.75rem;
+`;

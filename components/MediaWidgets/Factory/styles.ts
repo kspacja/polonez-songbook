@@ -13,3 +13,7 @@ export const Songwriter = styled.em`
   display: block;
   font-size: 1.3rem;
 `;
+
+export const Lyrics = styled.div`
+  font-size: 0.75rem;
+`;

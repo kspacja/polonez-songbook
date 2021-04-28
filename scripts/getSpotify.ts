@@ -63,10 +63,12 @@ async function main() {
       .map(({ track: { name, album, artists } }) => ({
         name,
         album: album.name,
+        year: album.release_date.replace(/-\d{2}-\d{2}/, ''),
         artist: artists.map(({ name }) => name).join('; '),
       }))
-      .map(({ artist, name, album }) => ({
+      .map(({ artist, name, album, year }) => ({
         artist,
+        year: Number(year),
         title: name,
         album: album
           .replace('- 2011 Remaster ', '')

@@ -4,7 +4,6 @@ import emailjs from 'emailjs-com';
 import { Button, AccordionContent } from 'components/styled';
 import { Container, Input, Email } from './styles';
 import { Loader } from 'pages/styles';
-
 export interface FeedbackProps {
   feedbackHint: ReactNode;
   metaData: string;

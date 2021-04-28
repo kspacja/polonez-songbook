@@ -19,3 +19,8 @@ export const Songwriter = styled.div`
 `;
 
 export const Title = styled.span``;
+
+export const Lyrics = styled.div`
+  margin-top: -0.25rem;
+  font-size: 0.75rem;
+`;

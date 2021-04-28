@@ -4,13 +4,158 @@
       "artist": "Krystyna Prońko", 
       "title": "Jesteś lekiem na całe zło", 
       "songwriter": "Marek Stefankiewicz", 
-      "mediaUrl": "https://www.youtube.com/watch?v=HeyX1H3HTVQ"
+      "mediaUrl": "https://www.youtube.com/watch?v=HeyX1H3HTVQ",
+      "lyrics": "Bogdan Olewicz",
+      "year": 1982
     },
     { 
       "artist": "Kayah", 
       "title": "Fleciki", 
       "songwriter": "Filip Sojka",
-      "mediaUrl": "https://www.youtube.com/watch?v=pbLY6Qyyc_8"
+      "mediaUrl": "https://www.youtube.com/watch?v=pbLY6Qyyc_8",
+      "lyrics": "Katarzyna Szczot",
+      "year": 1995
+    },
+    {
+      "artist": "Ewa Bem",
+      "title": "Pomidory",
+      "songwriter": "Krzysztof Scierański",
+      "mediaUrl": "https://www.youtube.com/watch?v=5flpjBo96XY",
+      "lyrics": "Jacek Skubikowski",
+      "year": 1987
+    },
+    {
+      "artist": "Krystyna Prońko",
+      "title": "Kilka takich sobie nut",
+      "songwriter": "Władysław Sendecki",
+      "mediaUrl": "https://www.youtube.com/watch?v=vpht_7NS7ss",
+      "lyrics": "Andrzej Mogielnicki",
+      "year": 1980
+    },
+    {
+      "artist": "Fasolki",
+      "title": "Moja fantazja",
+      "songwriter": "Sławomir Kowalewski",
+      "mediaUrl": "https://www.youtube.com/watch?v=fJKRESz8ZhE",
+      "lyrics": "Ewa Chotomska",
+      "year": 1988
+    },
+    {
+      "artist": "Edyta Górniak",
+      "title": "Dotyk",
+      "songwriter": "Piotr Rubik",
+      "mediaUrl": "https://www.youtube.com/watch?v=Ks4D4mLLiPI",
+      "lyrics": "Jacek Cygan",
+      "year": 1995
+    },
+    {
+      "artist": "Urszula Dudziak",
+      "title": "Nie jest źle",
+      "songwriter": "Krzysztof Komeda",
+      "mediaUrl": "https://www.youtube.com/watch?v=o-yrVXzzaUo",
+      "lyrics": "Agnieszka Osiecka",
+      "year": 1963
+    },
+    {
+      "artist": "The Car is on Fire",
+      "title": "Easy on the Eye",
+      "songwriter": "Michał Pruszkowski",
+      "mediaUrl": "https://www.youtube.com/watch?v=FCZ4MDA6YIs",
+      "year": 2008
+    },
+    {
+      "artist": "Mafia",
+      "title": "Noce Całe",
+      "songwriter": "Zdzisław Zioło",
+      "mediaUrl": "https://www.youtube.com/watch?v=oc2C-xa_OKA",
+      "lyrics": "Andrzej Piaseczny",
+      "year": 1995
+    },
+    {
+      "artist": "VOX",
+      "title": "Miłość jak zapomnienie",
+      "songwriter": "Janusz Skowron",
+      "mediaUrl": "https://www.youtube.com/watch?v=gVMK0WmB-oQ",
+      "lyrics": "Magdalena Wojtaszewska",
+      "year": 1989
+    },
+    {
+      "artist": "Bajm",
+      "title": "Jezioro Szczęścia",
+      "songwriter": "Dariusz Adamczyk",
+      "mediaUrl": "https://www.youtube.com/watch?v=BzWoQspCQSs",
+      "lyrics": "Beata Kozidrak",
+      "year": 1987
+    },
+    { 
+      "artist": "Kabaret OT.TO",
+      "title": "Chopin był geniuszem",
+      "songwriter": "Andrzej Piekarczyk",
+      "mediaUrl": "https://www.youtube.com/watch?v=xpeq_UQJuLg",
+      "year": 1993
+    },
+    {
+      "artist": "Kasia Lesing",
+      "title": "Nie zostawiaj mnie",
+      "songwriter": "Maciej Jamroz",
+      "mediaUrl": "https://www.youtube.com/watch?v=Km2uJMv7yJw",
+      "lyrics": "Janusz Kondratowicz",
+      "year": 1995
+    },
+    {
+      "artist": "Grażyna Łobaszewska",
+      "title": "Słowa wolne są od cła",
+      "songwriter": "Ryszard Sygitowicz",
+      "mediaUrl": "https://www.youtube.com/watch?v=7uatXZvvx5c",
+      "lyrics": "Jacek Cygan",
+      "year": 1986 
+    },
+    {
+      "artist": "Truskawkowe Studio",
+      "title": "Piosenka eklektyczna",
+      "songwriter": "Dariusz Kaliszuk",
+      "mediaUrl": "https://www.youtube.com/watch?v=OZ_elSC2-wE",
+      "lyrics": "Paweł Królikowski"
+    },
+    {
+      "artist": "Magdalena Fronczewska",
+      "title": "Myszka widziała ostatnia",
+      "songwriter": "Majka Jeżowska",
+      "mediaUrl": "https://www.youtube.com/watch?v=6yXbcct4-Pg",
+      "lyrics": "Jacek Cygan",
+      "year": 1990
+    },
+    {
+      "artist": "Zbigniew Wodecki",
+      "title": "Dzielę z tobą dzień na dwoje",
+      "songwriter": "Włodzimierz Nahorny",
+      "mediaUrl": "https://www.youtube.com/watch?v=Po2oF_EwDPg",
+      "lyrics": "Wojciech Młynarski",
+      "year": 1980
+    },
+    {
+      "artist": "Danuta Błażejczyk",
+      "title": "Concorde",
+      "songwriter": "Zbigniew Górny",
+      "mediaUrl": "https://www.youtube.com/watch?v=feOnYG5ytnQ",
+      "lyrics": "Jan Wołek", 
+      "year": 1988
+    },
+    {
+      "artist": "Eleni",
+      "title": "Wystawie Ci rachunek",
+      "songwriter": "Piotr Kałużny",
+      "mediaUrl": "https://www.youtube.com/watch?v=6089UGvbMSY",
+      "lyrics": "Andrzej Sobczak",
+      "year": 1985
+    },
+    {
+      "artist": "Jacek Skubikowski",
+      "title": "Piromania",
+      "songwriter": "Jacek Skubikowski",
+      "mediaUrl": "https://www.youtube.com/watch?v=y5EL4Px2o0o",
+      "lyrics": "Jacek Skubikowski",
+      "year": 1984
     }
   ]
 }

@@ -45,6 +45,12 @@ export default function SongwriterView() {
 
   const songwriter = songwritersMap[slug as string];
 
+  let description = songwriter.description;
+  description =
+    typeof description === 'string'
+      ? description
+      : description.join('\n\n------------\n\n');
+
   if (!songwriter) {
     return <DefaultErrorPage statusCode={404} />;
   }
@@ -88,7 +94,7 @@ export default function SongwriterView() {
         <TextsColumn>
           <h2 id="short-note">Coś jeszcze</h2>
           <Anchor id="short-note" />
-          <Text>{songwriter.description}</Text>
+          <Text>{description}</Text>
         </TextsColumn>
 
         <Feedback

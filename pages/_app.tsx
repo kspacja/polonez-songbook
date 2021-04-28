@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import NextImage from 'next/Image';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
@@ -13,6 +14,10 @@ import GlobalStyles from './_globalStyles';
 import { Header, Image, HeaderText, Navigation } from './styles';
 
 const PageLoading = dynamic(() => import('components/PageLoading'), {
+  ssr: false,
+});
+
+const ReactTooltip = dynamic(() => import('react-tooltip'), {
   ssr: false,
 });
 
@@ -64,6 +69,12 @@ function MyApp({ Component, pageProps }) {
         ))}
       </Navigation>
       {isLoading ? <PageLoading /> : <Component {...pageProps} />}
+      <ReactTooltip
+        place="bottom"
+        type="dark"
+        effect="solid"
+        multiline={true}
+      />
     </ThemeProvider>
   );
 }

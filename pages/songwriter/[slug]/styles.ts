@@ -25,12 +25,18 @@ export const Text = styled(Markdown)`
   background: ${color('textBg')};
   padding: 1.25rem;
   margin: 1rem 0;
+  font-size: 0.8rem;
   line-height: 1.25;
-  text-align: justify;
   border-left: solid 1px ${color('details')};
 
   p {
     margin: 0;
+  }
+
+  ul {
+    list-style: '☞  ';
+    padding: 0 0 0 1rem;
+    margin: 0 0 0 0.5rem;
   }
 `;
 
@@ -72,4 +78,8 @@ export const Anchor = styled.div`
 export const Header = styled.header`
   display: flex;
   align-items: center;
+  padding: 1rem 1.25rem;
+  background: ${color('others')};
+  border: solid 1px ${color('details')};
+  border-width: 1px 0;
 `;

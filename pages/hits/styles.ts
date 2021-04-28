@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 
-export const List = styled.div`
-  padding-top: 2rem;
+export const List = styled.ul`
+  list-style: none;
+  padding: 2rem 0;
+  margin: 0;
+
+  li {
+    padding-bottom: 0.75rem;
+  }
 `;
 
 export const Description = styled.div`

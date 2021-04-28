@@ -1,6 +1,12 @@
 {
   "name": "Krzesimir Dębski",
-  "description": "*Just* a mediaUrl: https://reactjs.com.",
+  "description": [
+    "Polish Songbook #1: Krzesimir Dębski & Jacek Cygan: http://www.porcys.com/rubric/polish-songbook-1-krzesimir-debski-jacek-cygan/",
+    "Borys Dejnarowicz o \"Przenikam\" i \"Stanie pogody\" w ramach rankingu Najlepsze polskie single XX wieku: http://www.porcys.com/ranking/najlepsze-polskie-single-xx-wieku/10/",
+    "Borys Dejnarowicz o m.in. \"Video - Dotyku\": https://www.substanceonly.net/anna-jurksztowicz",
+    "#### W ramach rankingu Polskie Piosenki Wszech Czasów serwisu screenagers: \n\n - Marta Słomka o \"Video - Dotyku\": http://www.screenagers.pl/index.php?service=xtras&action=show&id=343 \n\n - Kuba Ambrozewski o \"Stanie pogody\": http://www.screenagers.pl/index.php?service=xtras&action=show&id=348 \n\n - Paweł Sajewicz o \"Muszelko ratuj\": http://www.screenagers.pl/index.php?service=xtras&action=show&id=319 \n\n - Sebastian Niemczyk o \"Czas nas uczy pogody\": http://www.screenagers.pl/index.php?service=xtras&action=show&id=334",
+    "Audycja Radia Zak - Dyskoteka Młodego Człowieka - wywiad z Krzesimirem Dębskim: https://www.mixcloud.com/dyskotekamlodegoczlowieka/wywiad-z-krzesimirem-d%C4%99bskim/"
+  ],
   "playlists": [
     {
       "author": "Krzysztof Ciach",
@@ -12,27 +18,37 @@
     {
       "artist": "Anna Jurksztowicz",
       "title": "Stan Pogody",
-      "mediaUrl": "https://www.youtube.com/watch?v=K0FhEHQ5zCk"
+      "mediaUrl": "https://www.youtube.com/watch?v=K0FhEHQ5zCk",
+      "lyrics": "Jacek Cygan",
+      "year": 1987
     },
     {
       "artist": "Anna Jurksztowicz",
       "title": "Przenikam",
-      "mediaUrl": "https://open.spotify.com/track/1gchzeFpgqm6Pr1cfR5XmN?si=Q1OzjpEVTB-8fUAbL8hJmA"
+      "mediaUrl": "https://open.spotify.com/track/1gchzeFpgqm6Pr1cfR5XmN?si=Q1OzjpEVTB-8fUAbL8hJmA",
+      "lyrics": "Jacek Cygan",
+      "year": 1987
     },
     {
       "artist": "Grażyna Łobaszewka",
       "title": "Czas nas uczy pogody",
-      "mediaUrl": "https://www.youtube.com/watch?v=Nqbh2E6a300"
+      "mediaUrl": "https://www.youtube.com/watch?v=Nqbh2E6a300",
+      "lyrics": "Jacek Cygan",
+      "year": 1984
     },
     {
       "artist": "Krzysztof Antkowiak",
       "title": "Zwariowane sam na sam",
-      "mediaUrl": "https://www.youtube.com/watch?v=XCS9rrD7njQ"
+      "mediaUrl": "https://www.youtube.com/watch?v=XCS9rrD7njQ",
+      "lyrics": "Jacek Cygan",
+      "year": 1989
     },
     {
       "artist": "Zdzisława Sosnicka",
       "title": "Moje sentymenty",
-      "mediaUrl": "https://www.youtube.com/watch?v=fzapS0LWKJg"
+      "mediaUrl": "https://www.youtube.com/watch?v=fzapS0LWKJg",
+      "lyrics": "Jacek Cygan",
+      "year": 1987
     }
 
   ]

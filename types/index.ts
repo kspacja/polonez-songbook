@@ -1,6 +1,8 @@
 export interface Track {
   artist: string;
   title: string;
+  lyrics?: string;
+  year?: number;
 }
 
 export interface Song extends Track {
@@ -28,6 +30,6 @@ export interface Songwriter {
   slug: string;
   tops: Song[];
   playlists: Playlist[];
-  description: string;
+  description: string | string[];
   playlistsSongs: AlbumTrack[];
 }

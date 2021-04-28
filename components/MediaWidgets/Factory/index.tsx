@@ -29,6 +29,8 @@ export function SongWidgetFactory({
         pattern={pattern}
         getSrcUrl={getUrl}
         title={title}
+        lyrics={song.lyrics}
+        year={song.year}
         songwriter={'songwriter' in song ? song.songwriter : ''}
         iframeAttrs={{
           title,

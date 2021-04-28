@@ -39,6 +39,7 @@ export default function Home() {
           const { value } = event.target;
           handleChange(value);
         }}
+        data-tip="Jeśli szukasz całego wyrazenia, zamknij je w cudzysłów"
         placeholder="Odszukaj po nazwisku lub esensjonalnej piosence..."
       />
       <Loader $loading={searchInProgress} />
