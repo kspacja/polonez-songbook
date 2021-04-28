@@ -72,7 +72,7 @@ export const songwritersSearch = new MiniSearch({
           .join('; ');
       case 'playlistsSongs':
         return document.playlistsSongs
-          .map(({ artist, title, album }) => `${artist};${title};${album}`)
+          ?.map(({ artist, title, album }) => `${artist};${title};${album}`)
           .join('; ');
       default:
         return document[fieldName];

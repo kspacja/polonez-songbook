@@ -10,6 +10,7 @@ const container = css`
 
 export const Container = styled.div`
   ${container}
+  padding-bottom: 3rem;
 `;
 
 export const Header = styled.h1`

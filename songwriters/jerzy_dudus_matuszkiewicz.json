@@ -1,0 +1,21 @@
+{
+    "name": "Jerzy Duduś Matuszkiewicz",
+    "description": [
+      "Akapit 1",
+      "Akapit 2 z linkiem https://google.pl"
+    ],
+    "playlists": [{
+      "author": "Krzysztof Ciach",
+      "mediaUrl": "https://open.spotify.com/playlist/5Zs90pY4M270XHGCK5TfF9",
+      "name": "[2021] do odsłuchu"
+    }],
+    "tops": [
+      {
+        "artist": "Ariana Grande ft. Mac Miller",
+        "title": "The Way",
+        "mediaUrl": "https://www.youtube.com/watch?v=_sV0S8qWSy0",
+        "lyrics": "Johnson Novak",
+        "year": 2010
+      }
+    ]
+  }
