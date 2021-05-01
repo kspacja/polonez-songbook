@@ -83,3 +83,15 @@ export const Header = styled.header`
   border: solid 1px ${color('details')};
   border-width: 1px 0;
 `;
+
+export const Inprogress = styled.div`
+  width: 100%;
+  height: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2rem;
+  font-style: italic;
+`;

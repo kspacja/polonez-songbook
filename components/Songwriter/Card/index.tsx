@@ -4,15 +4,16 @@ import Link from 'next/link';
 import { Songwriter } from 'types';
 import { useSearchResult } from 'contexts/highlightText/hooks';
 import { hasMatch } from 'contexts/highlightText/utils';
+import HighlightText from 'contexts/highlightText/component';
+
+import isSongwriterInProgress from 'utils/isSongwriterInProgress';
 
 import PlaylistSongs from 'components/PlaylistSongs';
 import { SongwriterThumbnail } from 'components/Songwriter';
 import { SongHead } from 'components/Song';
 import { Button, AccordionContent } from 'components/styled';
 
-import HighlightText from 'contexts/highlightText/component';
-
-import { Container, Name, TopList, HeadContainer } from './styles';
+import { Container, Name, TopList, HeadContainer, Inprogress } from './styles';
 
 type CardProps = {
   songwriter: Songwriter;
@@ -34,9 +35,13 @@ export default function Card({ songwriter }: CardProps) {
               <HighlightText>{songwriter.name}</HighlightText>
             </Name>
           </Link>
-          <Button onClick={() => setIsTopListOpen((isOpen) => !isOpen)}>
-            Esensjonalne piosenki
-          </Button>
+          {isSongwriterInProgress(songwriter) ? (
+            <Button onClick={() => setIsTopListOpen((isOpen) => !isOpen)}>
+              Esensjonalne piosenki
+            </Button>
+          ) : (
+            <Inprogress>Trwają prace...</Inprogress>
+          )}
         </div>
       </HeadContainer>
       <AccordionContent

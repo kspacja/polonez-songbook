@@ -6,6 +6,7 @@ import fs from 'fs';
 import path from 'path';
 
 const songwritersDir = path.join(__dirname, '../songwriters');
+const imagesDir = path.join(__dirname, '../public/images');
 
 const { argv } = yargs(hideBin(process.argv))
   .usage('Usage: $0 [options]')
@@ -53,6 +54,10 @@ function getSongwriterFileTemplate(name: string) {
   }`.trimStart();
 }
 
+const placeholderImage = fs.readFileSync(
+  path.join(__dirname, 'placeholder.jpg')
+);
+
 let names = argv.n;
 
 if (argv.f) {
@@ -64,11 +69,19 @@ names.forEach((name) => {
   const stringName = String(name);
   const slug = snakeCase(stringName);
   const filePath = path.join(songwritersDir, `${slug}.json`);
+  const imgPath = path.join(imagesDir, `${slug}.jpg`);
 
   if (!fs.existsSync(filePath)) {
     fs.writeFileSync(filePath, getSongwriterFileTemplate(stringName));
     console.log(`File ${filePath} for songwriter ${stringName} is created`);
   } else {
     console.warn(`Cannot create ${filePath} because it exists`);
+  }
+
+  if (!fs.existsSync(imgPath)) {
+    fs.writeFileSync(imgPath, placeholderImage, 'base64');
+    console.log(`Image ${imgPath} for songwriter ${stringName} is created`);
+  } else {
+    console.warn(`Cannot create image ${imgPath} because it exists`);
   }
 });

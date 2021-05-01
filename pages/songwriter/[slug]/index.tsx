@@ -3,6 +3,7 @@ import DefaultErrorPage from 'next/error';
 
 import { songwritersMap } from 'songwriters';
 import getMediaName from 'utils/getMediaName';
+import isSongwriterInProgress from 'utils/isSongwriterInProgress';
 
 import Link from 'components/Link';
 import MediaWidget from 'components/MediaWidgets';
@@ -23,6 +24,7 @@ import {
   ColumnContainer,
   Anchor,
   Header,
+  Inprogress,
 } from './styles';
 
 const FEEDBACK_HINT = (
@@ -44,6 +46,8 @@ export default function SongwriterView() {
   } = useRouter();
 
   const songwriter = songwritersMap[slug as string];
+
+  const isInProgress = isSongwriterInProgress(songwriter);
 
   let description = songwriter.description;
   description =
@@ -67,41 +71,51 @@ export default function SongwriterView() {
         <SongwriterThumbnail songwriter={songwriter} size={75} />
         <div>
           <Name>{songwriter.name}</Name>
-          <Link href="#playlists">Playlisty</Link> |{' '}
-          <Link href="#short-note">Coś jeszcze?</Link>
+          {isInProgress && (
+            <>
+              <Link href="#playlists">Playlisty</Link> |{' '}
+              <Link href="#short-note">Coś jeszcze?</Link>
+            </>
+          )}
         </div>
       </Header>
 
       <Navigation items={navigationItems} />
 
-      <ColumnContainer>
-        <TopsColumn>
-          <h2>Esensja</h2>
-          <Anchor id="tops" />
-          {songwriter.tops.map((song) => {
-            const Widget = MediaWidget.song[getMediaName(song.mediaUrl)];
-            return <Widget key={song.mediaUrl} song={song} />;
-          })}
-        </TopsColumn>
+      {isInProgress ? (
+        <>
+          <ColumnContainer>
+            <TopsColumn>
+              <h2>Esensja</h2>
+              <Anchor id="tops" />
+              {songwriter.tops.map((song) => {
+                const Widget = MediaWidget.song[getMediaName(song.mediaUrl)];
+                return <Widget key={song.mediaUrl} song={song} />;
+              })}
+            </TopsColumn>
 
-        <PlaylistColumn>
-          <h2>Playlisty</h2>
-          <Anchor id="playlists" />
+            <PlaylistColumn>
+              <h2>Playlisty</h2>
+              <Anchor id="playlists" />
 
-          <Playlists playlists={songwriter.playlists} />
-        </PlaylistColumn>
+              <Playlists playlists={songwriter.playlists} />
+            </PlaylistColumn>
 
-        <TextsColumn>
-          <h2 id="short-note">Coś jeszcze</h2>
-          <Anchor id="short-note" />
-          <Text>{description}</Text>
-        </TextsColumn>
+            <TextsColumn>
+              <h2 id="short-note">Coś jeszcze</h2>
+              <Anchor id="short-note" />
+              <Text>{description}</Text>
+            </TextsColumn>
 
-        <Feedback
-          feedbackHint={FEEDBACK_HINT}
-          metaData={`[Songwriter: ${songwriter.name}]`}
-        />
-      </ColumnContainer>
+            <Feedback
+              feedbackHint={FEEDBACK_HINT}
+              metaData={`[Songwriter: ${songwriter.name}]`}
+            />
+          </ColumnContainer>
+        </>
+      ) : (
+        <Inprogress>Prace trwają...</Inprogress>
+      )}
     </Container>
   );
 }

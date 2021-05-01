@@ -25,3 +25,7 @@ export const TopList = styled.ul`
     padding-left: 0;
   }
 `;
+
+export const Inprogress = styled.div`
+  font-size: 0.8rem;
+`;
