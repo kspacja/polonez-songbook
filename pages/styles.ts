@@ -26,17 +26,6 @@ export const Header = styled.h1`
   padding-bottom: 0;
 `;
 
-export const SearchInput = styled.input`
-  width: 100%;
-  padding: 0.5rem;
-  border: solid 1px ${color('border')};
-  border-radius: 0;
-
-  &:focus {
-    outline: none;
-  }
-`;
-
 const rotate = keyframes`
   0% {
     transform: translateX(-100%);

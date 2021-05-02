@@ -7,8 +7,9 @@ import getDefaultResultItem from 'utils/getDefaultResultItem';
 import { HitSong } from 'types';
 import { SongHead } from 'components/Song';
 import { Button, AccordionContent } from 'components/styled';
+import SearchInput from 'components/SearchInput';
 import Breadcrumbs from 'components/Breadcrumbs';
-import { Container, SearchInput, Loader } from 'pages/styles';
+import { Container, Loader } from 'pages/styles';
 import useSearch from 'hooks/useSearch';
 import HighlightTextContext from 'contexts/highlightText';
 
@@ -59,11 +60,8 @@ export default function SongwriterView() {
       </Description>
 
       <SearchInput
-        type="text"
-        onChange={(event) => {
-          const { value } = event.target;
-          handleChange(value);
-        }}
+        value={searchValue}
+        handleChange={handleChange}
         placeholder="Odszukaj po songwriterze, wykonawcy czy piosence..."
       />
       <Loader $loading={searchInProgress} />

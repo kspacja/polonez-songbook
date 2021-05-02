@@ -3,11 +3,12 @@ import { SearchResult } from 'minisearch';
 import allSongwriters, { songwritersSearch, songwritersMap } from 'songwriters';
 import getDefaultResultItem from 'utils/getDefaultResultItem';
 
+import SearchInput from 'components/SearchInput';
 import { SongwriterCard } from 'components/Songwriter';
 import HighlightTextContext from 'contexts/highlightText';
 import useSearch from 'hooks/useSearch';
 
-import { Container, SearchInput, Loader, Counter } from './styles';
+import { Container, Loader, Counter } from './styles';
 
 const songwriters = allSongwriters.map(getDefaultResultItem);
 
@@ -41,12 +42,9 @@ export default function Home() {
   return (
     <Container>
       <SearchInput
-        type="text"
-        onChange={(event) => {
-          const { value } = event.target;
-          handleChange(value);
-        }}
-        data-tip="Jeśli szukasz całego wyrazenia, zamknij je w cudzysłów"
+        value={searchValue}
+        handleChange={handleChange}
+        tipText="Jeśli szukasz całego wyrazenia, zamknij je w cudzysłów"
         placeholder="Odszukaj po nazwisku lub esensjonalnej piosence..."
       />
       <Loader $loading={searchInProgress} />
