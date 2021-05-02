@@ -1,3 +1,4 @@
+import { memoize } from 'lodash';
 import getPhrases from 'utils/getPhrases';
 
 function mergeRanges(ranges: [number, number][]) {
@@ -32,17 +33,23 @@ function mergeRanges(ranges: [number, number][]) {
   return result;
 }
 
+const createRegExpTerm = memoize((term: string) => {
+  return new RegExp(`["')(]?${term}[,.:;"'?!)(]?`, 'i');
+});
+
 export default function getHighlightRanges(
   text: string,
-  searchValue: string,
+  searchValue = '',
   terms = [] as string[]
-) {
+): number[] {
+  if (searchValue.length <= 2) {
+    return [];
+  }
+
   const termsCopy = [...terms];
   const phrases = getPhrases(searchValue);
 
-  const phrasesRegExps = phrases.map(
-    (term) => new RegExp(`["')(]?${term}[,.:;"'?!)(]?`, 'i')
-  );
+  const phrasesRegExps = phrases.map(createRegExpTerm);
 
   const positions = phrasesRegExps
     .map((re) => {

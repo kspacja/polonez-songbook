@@ -1,4 +1,4 @@
-import { useCallback, useState, useMemo, useEffect } from 'react';
+import { useCallback, useState, useMemo, useEffect, useRef } from 'react';
 import MiniSearch, { SearchResult } from 'minisearch';
 import { debounce } from 'lodash';
 
@@ -18,35 +18,17 @@ export interface GAListItem {
   item_name?: string;
 }
 
-function shouldSearch(value: string) {
+const SUSPENDED_LIST_LENGTH = 10;
+
+export function shouldSearch(value: string) {
   return value.length > 2;
 }
 
-export default function useSearch<T>(
-  searchInstance: MiniSearch<T>,
-  mapResultToListItem: (SearchResult) => ListItem<T>,
-  defaultList: ListItem<T>[],
+function useGATracking(
+  searchResult: SearchResult[],
+  searchValue: string,
   mapResultToGAListItem: (SearchResult) => GAListItem
-): [ListItem<T>[], (value) => void, boolean, string] {
-  const [searchInProgress, setSearchInProgress] = useState(false);
-  const [searchValue, setSearchValue] = useState('');
-  const [searchResult, setSearchResult] = useState<SearchResult[]>([]);
-  const searchFor = useCallback(
-    debounce(
-      (value: string) => {
-        if (shouldSearch(value)) {
-          setSearchResult(searchInstance.search(value));
-        } else {
-          setSearchResult([]);
-        }
-        setSearchInProgress(false);
-      },
-      300,
-      { leading: true }
-    ),
-    []
-  );
-
+) {
   useEffect(() => {
     if (shouldSearch(searchValue)) {
       window.gtag('event', 'view_item_list', {
@@ -58,25 +40,99 @@ export default function useSearch<T>(
       });
     }
   }, [searchResult]);
+}
+
+function useSuspens<T>(
+  foundList: ListItem<T>[],
+  searchInProgress: boolean,
+  searchValue: string,
+  defaultList: ListItem<T>[]
+): [list: ListItem<T>[], count: number] {
+  const [suspended, setSuspended] = useState(false);
+  const lastInProgress = useRef(false);
+  const [currentList, setCurrentList] = useState(defaultList);
+
+  const unsus = useCallback(() => {
+    setSuspended(false);
+  }, [setSuspended]);
+
+  useEffect(() => {
+    if (lastInProgress.current && !searchInProgress) {
+      setCurrentList(foundList);
+      setSuspended(true);
+
+      document.addEventListener('scroll', unsus, { once: true });
+    }
+    lastInProgress.current = searchInProgress;
+  }, [foundList, searchInProgress]);
+
+  useEffect(() => {
+    if (!shouldSearch(searchValue)) {
+      setCurrentList(defaultList);
+    }
+  }, [searchValue]);
+
+  useEffect(() => {
+    return () => {
+      document.removeEventListener('scroll', unsus);
+    };
+  }, []);
+
+  const list = shouldSearch(searchValue) ? currentList : defaultList;
+
+  return [
+    list.slice(0, suspended ? SUSPENDED_LIST_LENGTH : list.length),
+    list.length,
+  ];
+}
+
+export default function useSearch<T>(
+  searchInstance: MiniSearch<T>,
+  mapResultToListItem: (SearchResult) => ListItem<T>,
+  defaultList: ListItem<T>[],
+  mapResultToGAListItem: (SearchResult) => GAListItem
+): [
+  list: ListItem<T>[],
+  handleChangeSearchValue: (value) => void,
+  searchInProgress: boolean,
+  searchValue: string,
+  listCount: number
+] {
+  const [searchInProgress, setSearchInProgress] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
+  const [searchResult, setSearchResult] = useState<SearchResult[]>([]);
+  const searchFor = useCallback(
+    debounce((value: string) => {
+      setSearchResult(searchInstance.search(value));
+      setSearchInProgress(false);
+    }, 300),
+    []
+  );
+
+  useGATracking(searchResult, searchValue, mapResultToGAListItem);
 
   const foundList = useMemo(() => searchResult.map(mapResultToListItem), [
     searchValue,
     searchResult,
   ]);
 
-  const list =
-    shouldSearch(searchValue) && (!searchInProgress || foundList.length > 0)
-      ? foundList
-      : defaultList;
+  const [suspendedList, count] = useSuspens(
+    foundList,
+    searchInProgress,
+    searchValue,
+    defaultList
+  );
 
   const handleChange = useCallback(
     (value) => {
-      setSearchInProgress(true);
       setSearchValue(value);
-      searchFor(value);
+      if (shouldSearch(value)) {
+        searchFor(value);
+        setSearchInProgress(true);
+      }
     },
     [setSearchInProgress, setSearchValue, searchFor]
   );
 
-  return [list, handleChange, searchInProgress, searchValue];
+  return [suspendedList, handleChange, searchInProgress, searchValue, count];
 }

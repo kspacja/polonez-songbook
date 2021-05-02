@@ -37,6 +37,7 @@ export default function SongwriterView() {
     handleChange,
     searchInProgress,
     searchValue,
+    listCount,
   ] = useSearch<HitSong>(hitsSearch, mapResult, hits, mapResultToGA);
 
   return (
@@ -81,7 +82,7 @@ export default function SongwriterView() {
           );
         })}
 
-        {list.length === 0 && 'No, nie udało się nic znaleźć'}
+        {listCount === 0 && 'No, nie udało się nic znaleźć'}
       </List>
 
       <Feedback

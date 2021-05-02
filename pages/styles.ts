@@ -113,3 +113,8 @@ export const Navigation = styled.ul`
     content: '';
   }
 `;
+
+export const Counter = styled.div`
+  font-size: 0.7rem;
+  text-align: right;
+`;

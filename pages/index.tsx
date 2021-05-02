@@ -1,3 +1,4 @@
+import React from 'react';
 import { SearchResult } from 'minisearch';
 import allSongwriters, { songwritersSearch, songwritersMap } from 'songwriters';
 import getDefaultResultItem from 'utils/getDefaultResultItem';
@@ -6,7 +7,7 @@ import { SongwriterCard } from 'components/Songwriter';
 import HighlightTextContext from 'contexts/highlightText';
 import useSearch from 'hooks/useSearch';
 
-import { Container, SearchInput, Loader } from './styles';
+import { Container, SearchInput, Loader, Counter } from './styles';
 
 const songwriters = allSongwriters.map(getDefaultResultItem);
 
@@ -24,7 +25,13 @@ function mapResultToGA(searchResult: SearchResult) {
 }
 
 export default function Home() {
-  const [list, handleChange, searchInProgress, searchValue] = useSearch(
+  const [
+    list,
+    handleChange,
+    searchInProgress,
+    searchValue,
+    listCount,
+  ] = useSearch(
     songwritersSearch,
     mapResultToSongwriter,
     songwriters,
@@ -43,15 +50,19 @@ export default function Home() {
         placeholder="Odszukaj po nazwisku lub esensjonalnej piosence..."
       />
       <Loader $loading={searchInProgress} />
+      <Counter>(Długość listy: {listCount})</Counter>
       {list.map(({ item: songwriter, searchResult }) => (
         <HighlightTextContext.Provider
           key={songwriter.slug}
-          value={{ searchResult, searchValue }}
+          value={{
+            searchResult,
+            searchValue: searchValue.length > 2 ? searchValue : '',
+          }}
         >
           <SongwriterCard songwriter={songwriter} />
         </HighlightTextContext.Provider>
       ))}
-      {list.length === 0 && 'No, nie udało się nic znaleźć'}
+      {listCount === 0 && 'No, nie udało się nic znaleźć'}
     </Container>
   );
 }

@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import SpotifyWebApi from 'spotify-web-api-node';
+import { Songwriter } from '../types';
+import isSongwriterInProgress from '../utils/isSongwriterInProgress';
 
 import getMediaName from '../utils/getMediaName';
 
@@ -24,17 +26,24 @@ async function main() {
         encoding: 'utf-8',
       }),
     }))
-    .map(({ file, fileContent }) => ({
-      slug: file.replace(/\.json/, ''),
-      playlists: JSON.parse(fileContent).playlists,
-    }))
-    .reduce((playlistsWithSlug, { playlists, slug }) => {
+    .map(({ file, fileContent }) => {
+      const songwriter = JSON.parse(fileContent) as Songwriter;
+
+      return {
+        slug: file.replace(/\.json/, ''),
+        playlists: songwriter.playlists,
+        inProgress: isSongwriterInProgress(songwriter),
+      };
+    })
+    .reduce((playlistsWithSlug, { playlists, slug, inProgress }) => {
       return [
         ...playlistsWithSlug,
-        ...playlists.map((pl) => ({ url: pl.mediaUrl, slug })),
+        ...playlists.map((pl) => ({ url: pl.mediaUrl, slug, inProgress })),
       ];
     }, [])
-    .filter(({ url }) => getMediaName(url) === 'spotify')
+    .filter(
+      ({ url, inProgress }) => getMediaName(url) === 'spotify' && !inProgress
+    )
     .map(({ slug, url }) => ({
       slug,
       playlistId: url.replace(/(.+)\/([^/]+)$/, '$2'),
@@ -58,7 +67,13 @@ async function main() {
     );
     console.timeEnd(label);
 
-    const playlistTracks = playlistTracksResponse.body.items
+    const playlistTracksResponseBody = playlistTracksResponse.body;
+
+    const items =
+      playlistTracksResponseBody.items ||
+      playlistTracksResponseBody.tracks.items;
+
+    const playlistTracks = items
       .map(({ track: { name, album, artists } }) => ({
         name,
         album: album.name,

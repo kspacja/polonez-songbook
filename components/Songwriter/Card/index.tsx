@@ -35,7 +35,7 @@ export default function Card({ songwriter }: CardProps) {
               <HighlightText>{songwriter.name}</HighlightText>
             </Name>
           </Link>
-          {isSongwriterInProgress(songwriter) ? (
+          {!isSongwriterInProgress(songwriter) ? (
             <Button onClick={() => setIsTopListOpen((isOpen) => !isOpen)}>
               Esensjonalne piosenki
             </Button>

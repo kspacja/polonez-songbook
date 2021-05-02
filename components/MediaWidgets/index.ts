@@ -29,7 +29,7 @@ export default {
     youtube: PlaylistWidgetFactory({
       getUrl: (id: string) =>
         `https://www.youtube.com/embed/videoseries?list=${id}`,
-      pattern: /((v=)|(be\/))(?<id>.+)$/,
+      pattern: /(list=)(?<id>.+)$/,
       addonAttrs: ADDON_ATTRS['youtube'],
     }),
     spotify: PlaylistWidgetFactory({

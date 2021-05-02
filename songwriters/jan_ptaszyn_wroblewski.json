@@ -1,21 +1,57 @@
 {
     "name": "Jan Ptaszyn Wróblewski",
     "description": [
-      "Akapit 1",
-      "Akapit 2 z linkiem https://google.pl"
+      "Michał Hoffman o piosence \"Zielono mi\" w ramach rankingu Polskie Piosenki Wszech Czasów: http://www.screenagers.pl/index.php?service=xtras&action=show&id=318",
+      "Kamil J. Bałuk o piosence \"Przygoda z Marią\" w ramach rankingu Polskie Piosenki Wszech Czasów: http://www.screenagers.pl/index.php?service=xtras&action=show&id=323",
+      "Wojciech Chełmecki o piosence \"Zielono mi\" w ramach rankingu Najlepsze polskie single XX wieku: http://www.porcys.com/ranking/najlepsze-polskie-single-xx-wieku/4/"
     ],
-    "playlists": [{
-      "author": "Krzysztof Ciach",
-      "mediaUrl": "https://open.spotify.com/playlist/5Zs90pY4M270XHGCK5TfF9",
-      "name": "[2021] do odsłuchu"
-    }],
+    "playlists": [
+      {
+        "author": "Krzysztof Ciach",
+        "mediaUrl": "https://open.spotify.com/playlist/057o97CJo7UvN81X2Icy52",
+        "name": "[BEST] Jan \"Ptaszyn\" Wróblewski"
+      },
+      {
+        "author": "Krzysztof Ciach",
+        "mediaUrl": "https://www.youtube.com/playlist?list=PLvaE3I24S28qReODFd7rr5ZEwzDOqugVE",
+        "name": "Jan \"Ptaszyn\" Wróblewski"
+      }
+    ],
     "tops": [
       {
-        "artist": "Ariana Grande ft. Mac Miller",
-        "title": "The Way",
-        "mediaUrl": "https://www.youtube.com/watch?v=_sV0S8qWSy0",
-        "lyrics": "Johnson Novak",
-        "year": 2010
+        "artist": "Alibabki",
+        "title": "Odkładana miłość",
+        "mediaUrl": "https://youtu.be/-WmmRzR2W0Q",
+        "lyrics": "Maria Czubaszek",
+        "year": 1977
+      },
+      {
+        "artist": "Andrzej Dąbrowski",
+        "title": "Zielono mi",
+        "mediaUrl": "https://www.youtube.com/watch?v=A3Erhhwt9kg",
+        "lyrics": "Agnieszka Osiecka",
+        "year": 1970
+      },
+      {
+        "artist": "Andrzej Dąbrowski",
+        "title": "Przygoda z Marią",
+        "mediaUrl": "https://www.youtube.com/watch?v=VxM6jONnuxs",
+        "lyrics": "Agnieszka Osiecka",
+        "year": 1970
+      },
+      {
+        "artist": "Maryla Rodowicz",
+        "title": "Zmieniam skórę",
+        "mediaUrl": "https://www.youtube.com/watch?v=hNSxiEbnIJA",
+        "lyrics": "Agnieszka Osiecka",
+        "year": 1976
+      },
+      {
+        "artist": "Alibabki",
+        "title": "Jeśli masz do kogo wracać",
+        "mediaUrl": "https://www.youtube.com/watch?v=0RYpxxzzQ1M",
+        "lyrics": "Maria Czubaszek",
+        "year": 1977
       }
     ]
   }

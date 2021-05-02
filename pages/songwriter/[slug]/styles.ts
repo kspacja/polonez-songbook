@@ -82,6 +82,22 @@ export const Header = styled.header`
   background: ${color('others')};
   border: solid 1px ${color('details')};
   border-width: 1px 0;
+
+  ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+
+    li:after {
+      content: ' |';
+      padding-right: 0.25rem;
+    }
+
+    li:last-child:after {
+      display: none;
+    }
+  }
 `;
 
 export const Inprogress = styled.div`

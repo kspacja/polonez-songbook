@@ -1,0 +1,56 @@
+{
+    "name": "Katarzyna \"Kayah\" Szczot",
+    "description": [
+      "Marek Lewandowski o \"Na językach\" w ramach rankingu Najlepsze polskie single XX wieku: http://www.porcys.com/ranking/najlepsze-polskie-single-xx-wieku/2/",
+      "Borys Dejnarowicz o \"Mocniej\" Piaska w ramach rankingu Najlepsze polskie single XX wieku: http://www.porcys.com/ranking/najlepsze-polskie-single-xx-wieku/7/",
+      "Borys Dejnarowicz o piosence \"Jutro rano\": https://www.substanceonly.net/k-inne",
+      "Audycja Polonez o twórczości Kayah z lat 90.: https://www.mixcloud.com/krzysztof-ciach/polonez-3112020-kayah-lata-90/"
+    ],
+    "playlists": [{
+      "author": "Krzysztof Ciach",
+      "mediaUrl": "https://open.spotify.com/playlist/44ykOb51Y3f2OB23QCy14c?si=dT_T0eWmTo6pvpRNCjzTGA",
+      "name": "[POL] Kayah"
+    },
+    {
+      "author": "Krzysztof Ciach",
+      "mediaUrl": "https://www.youtube.com/playlist?list=PLvaE3I24S28psUWl6O5QnMZnQ3voOM7Jj",
+      "name": "Katarzyna \"Kayah\" Szczot"
+    }],
+    "tops": [
+      {
+        "artist": "Kayah",
+        "title": "Na językach",
+        "mediaUrl": "https://www.youtube.com/watch?v=dJbaMhTQx9k",
+        "lyrics": "Katarzyna Szczot",
+        "year": 1997
+      },
+      {
+        "artist": "Kayah",
+        "title": "Supermenka",
+        "mediaUrl": "https://www.youtube.com/watch?v=JTpos657Am0",
+        "lyrics": "Katarzyna Szczot",
+        "year": 1997
+      },
+      {
+        "artist": "Piasek",
+        "title": "Mocnej",
+        "mediaUrl": "https://www.youtube.com/watch?v=RbqA9J82GwQ",
+        "lyrics": "Andrzej Piaseczny",
+        "year": 1997
+      },
+      {
+        "artist": "Kayah",
+        "title": "Jutro rano",
+        "mediaUrl": "https://www.youtube.com/watch?v=q6x0Ema5DYY",
+        "lyrics": "Katarzyna Szczot",
+        "year": 2005
+      },
+      {
+        "artist": "Kasia Stankiewicz",
+        "title": "Zeby dodać, trzeba dać",
+        "mediaUrl": "https://www.youtube.com/watch?v=OrBK6PvySdg",
+        "lyrics": "Katarzyna Szczot",
+        "year": 1999
+      }
+    ]
+  }

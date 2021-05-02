@@ -1,21 +1,46 @@
 {
     "name": "Edyta Bartosiewicz",
-    "description": [
-      "Akapit 1",
-      "Akapit 2 z linkiem https://google.pl"
-    ],
+    "description": [],
     "playlists": [{
       "author": "Krzysztof Ciach",
-      "mediaUrl": "https://open.spotify.com/playlist/5Zs90pY4M270XHGCK5TfF9",
-      "name": "[2021] do odsłuchu"
+      "mediaUrl": "https://open.spotify.com/playlist/4XJtKZoMAKw6223TDGQTJQ?si=4Of1HDITTU2s-O17Zm9QaQ",
+      "name": "[BEST] Edyta Bartosiewicz"
     }],
     "tops": [
       {
-        "artist": "Ariana Grande ft. Mac Miller",
-        "title": "The Way",
-        "mediaUrl": "https://www.youtube.com/watch?v=_sV0S8qWSy0",
-        "lyrics": "Johnson Novak",
+        "artist": "Edyta Bartosiewicz",
+        "title": "Mandarynka",
+        "mediaUrl": "https://www.youtube.com/watch?v=fKG0GGdlBW8",
+        "lyrics": "Edyta Bartosiewicz",
+        "year": 1998
+      },
+      {
+        "artist": "Edyta Bartosiewicz",
+        "title": "Witaj w moim świecie",
+        "mediaUrl": "https://www.youtube.com/watch?v=bcTA12701S8",
+        "lyrics": "Edyta Bartosiewicz",
         "year": 2010
+      },
+      {
+        "artist": "Edyta Bartosiewicz",
+        "title": "Miłość jak ogień",
+        "mediaUrl": "https://www.youtube.com/watch?v=oDhRX5XRSlQ",
+        "lyrics": "Edyta Bartosiewicz",
+        "year": 1998
+      },
+      {
+        "artist": "Edyta Bartosiewicz",
+        "title": "Love",
+        "mediaUrl": "https://www.youtube.com/watch?v=Us8G6r3XdnY",
+        "lyrics": "Edyta Bartosiewicz",
+        "year": 1992
+      },
+      {
+        "artist": "Edyta Bartosiewicz",
+        "title": "Nie znamy się",
+        "mediaUrl": "https://www.youtube.com/watch?v=Igj6BFhonoA",
+        "lyrics": "Edyta Bartosiewicz",
+        "year": 1997
       }
     ]
   }

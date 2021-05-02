@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 import getHighlightRanges from './getHighlightsRanges';
 import { useSearchResult } from './hooks';
 import { Highlight } from './styles';
@@ -18,9 +18,13 @@ function stripHtml(html: string) {
   return tmp.textContent || tmp.innerText || tmp.innerHTML || '';
 }
 
-function getHighlightedText(text, highlightRanges: number[]) {
+function getHighlightedText(text: string, highlightRanges: number[]) {
   let cursor = 0;
   let isTagClose = false;
+
+  if (highlightRanges.length === 0) {
+    return text;
+  }
 
   let highlightedText = Array.from(text)
     .map((letter, index) => {
@@ -54,7 +58,10 @@ export default function HighlightText({
   text = useMemo(() => stripHtml(text), [text]);
 
   const highlights = useMemo(
-    () => highlightRanges || getHighlightRanges(text, searchValue, terms),
+    () =>
+      searchValue.length > 2
+        ? highlightRanges || getHighlightRanges(text, searchValue, terms)
+        : [],
     [children, searchValue, match]
   );
 

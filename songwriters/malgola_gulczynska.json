@@ -1,21 +1,50 @@
 {
     "name": "Małgola Gulczyńska",
     "description": [
-      "Akapit 1",
-      "Akapit 2 z linkiem https://google.pl"
+      "Wywiad w audycji Polonez w Radiu Luz: https://www.mixcloud.com/krzysztof-ciach/polonez-13-10-2020-zdrowie-uroda-i-duchy-czyli-wywiad-z-ma%C5%82gol%C4%85-no/",
+      "Recenzja A/B w portalu Porcys: http://www.porcys.com/review/malgola-no-ab/",
+      ""
     ],
     "playlists": [{
       "author": "Krzysztof Ciach",
-      "mediaUrl": "https://open.spotify.com/playlist/5Zs90pY4M270XHGCK5TfF9",
-      "name": "[2021] do odsłuchu"
+      "mediaUrl": "https://open.spotify.com/playlist/39nfPRj4NIRffz8Cd1W4lj?si=mfeQ_VaKROOcvq03eGI1lg",
+      "name": "[PSB] Małgola Gulczyńska"
     }],
     "tops": [
       {
-        "artist": "Ariana Grande ft. Mac Miller",
-        "title": "The Way",
-        "mediaUrl": "https://www.youtube.com/watch?v=_sV0S8qWSy0",
-        "lyrics": "Johnson Novak",
-        "year": 2010
+        "artist": "Małgola, No",
+        "title": "Didn't Cry",
+        "mediaUrl": "https://www.youtube.com/watch?v=Gx5urGG3O7c",
+        "lyrics": "Małgola Gulczyńska",
+        "year": 2016
+      },
+      {
+        "artist": "Małgola, No",
+        "title": "So Ugly",
+        "mediaUrl": "https://www.youtube.com/watch?v=3F0bFrBgSyc",
+        "lyrics": "Małgola Gulczyńska",
+        "year": 2020
+      },
+      {
+        "artist": "Małgola, No",
+        "title": "Exercise",
+        "mediaUrl": "https://www.youtube.com/watch?v=P0icSMcpi5g",
+        "lyrics": "Małgola Gulczyńska",
+        "year": 2018
+      },
+      {
+        "artist": "100% Rabbit",
+        "title": "From the Closet to a Box",
+        "mediaUrl": "https://www.youtube.com/watch?v=NSQXOoquHHQ",
+        "lyrics": "Małgola Gulczyńska",
+        "year": 2019
+      },
+      {
+        "artist": "100% Rabbit",
+        "title": "Thin Layers",
+        "mediaUrl": "https://www.youtube.com/watch?v=-STUJrQ9YyY",
+        "lyrics": "Małgola Gulczyńska",
+        "year": 2020
       }
     ]
   }
