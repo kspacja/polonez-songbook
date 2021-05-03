@@ -11,7 +11,7 @@ export interface SearchResultReturnValue {
 export function useSearchResult() {
   const {
     searchResult: { match = {}, terms = [] },
-    searchValue,
+    searchValue = '',
   } = useContext(HighlightContext) || { searchResult: {} };
 
   return { match, terms, searchValue };

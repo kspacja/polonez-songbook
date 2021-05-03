@@ -3,6 +3,7 @@ type Pattern = [string, RegExp];
 const PATTERNS: Pattern[] = [
   ['youtube', /(\.|\/)youtu/],
   ['spotify', /open\.spotify/],
+  ['bandcamp', /bandcamp\.com/],
 ];
 
 export default function getMediaName(link: string) {

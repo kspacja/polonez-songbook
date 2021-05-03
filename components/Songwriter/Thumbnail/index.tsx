@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import NextImage from 'next/Image';
 import { Image, ImageProps } from './styles';
 import { Songwriter } from 'types';
@@ -13,8 +14,10 @@ export default function Thumbnail({
   width = size,
   height = size,
 }: ThumbnailProps) {
+  const [loaded, setLoaded] = useState(false);
+
   return (
-    <Image width={width} height={height}>
+    <Image $loaded={loaded} width={width} height={height}>
       <NextImage
         src={`/images/${songwriter.slug}.jpg`}
         layout="fill"
@@ -22,6 +25,9 @@ export default function Thumbnail({
         title={songwriter.name}
         objectFit="cover"
         objectPosition="left top"
+        onLoad={() => {
+          setLoaded(true);
+        }}
       />
     </Image>
   );

@@ -57,7 +57,7 @@ export const songwritersSearch = new MiniSearch({
     }
   },
   searchOptions: {
-    boost: { name: 2 },
+    boost: { name: 10 },
     prefix: true,
     fuzzy: 0.15,
     tokenize: getPhrases,

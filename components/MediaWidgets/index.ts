@@ -10,6 +10,10 @@ const ADDON_ATTRS = {
     allow: 'encrypted-media',
     allowtransparency: true,
   },
+  bandcamp: {
+    seamless: true,
+    height: '42px',
+  },
 };
 
 export default {
@@ -23,6 +27,12 @@ export default {
       getUrl: (id: string) => `https://open.spotify.com/embed/track/${id}`,
       pattern: /track\/(?<id>[^?]+)/,
       addonAttrs: ADDON_ATTRS['spotify'],
+    }),
+    bandcamp: SongWidgetFactory({
+      getUrl: (id: string) =>
+        `https://bandcamp.com/EmbeddedPlayer/size=small/bgcol=333333/linkcol=ffffff/track=${id}/transparent=true/`,
+      pattern: /\?id=(?<id>.+)$/,
+      addonAttrs: ADDON_ATTRS['bandcamp'],
     }),
   },
   playlist: {
