@@ -42,3 +42,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
  * nowości
  * eksploruj
  * top wszechczasów
+
+ ## Technical improvements
+
+ * performance
+ * visual regresion tests

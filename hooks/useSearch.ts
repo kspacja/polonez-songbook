@@ -59,7 +59,6 @@ function useSuspens<T>(
   useEffect(() => {
     if (lastInProgress.current && !searchInProgress) {
       setCurrentList(foundList);
-      setSuspended(true);
 
       document.addEventListener('scroll', unsus, { once: true });
     }
@@ -70,9 +69,12 @@ function useSuspens<T>(
     if (!shouldSearch(searchValue)) {
       setCurrentList(defaultList);
     }
+    setSuspended(true);
   }, [searchValue]);
 
   useEffect(() => {
+    document.addEventListener('scroll', unsus, { once: true });
+
     return () => {
       document.removeEventListener('scroll', unsus);
     };

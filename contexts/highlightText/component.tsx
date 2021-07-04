@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+import { random } from 'lodash';
+import React, { useEffect, useMemo, useState } from 'react';
 import getHighlightRanges from './getHighlightsRanges';
 import { useSearchResult } from './hooks';
 import { Highlight } from './styles';
@@ -48,6 +49,20 @@ function getHighlightedText(text: string, highlightRanges: number[]) {
   return highlightedText;
 }
 
+function getHighlights(
+  text: string,
+  searchValue: string,
+  terms: string[],
+  highlightRanges: number[]
+) {
+  const highlights =
+    searchValue.length > 2
+      ? highlightRanges || getHighlightRanges(text, searchValue, terms)
+      : [];
+
+  return getHighlightedText(text, highlights);
+}
+
 export default function HighlightText({
   children = [],
   highlightRanges,
@@ -57,15 +72,19 @@ export default function HighlightText({
   let text = typeof children === 'string' ? children : children.join('');
   text = useMemo(() => stripHtml(text), [text]);
 
-  const highlights = useMemo(
-    () =>
-      searchValue.length > 2
-        ? highlightRanges || getHighlightRanges(text, searchValue, terms)
-        : [],
-    [children, searchValue, match]
-  );
+  const [highlightedText, setHighlightedText] = useState(text);
 
-  const highlightedText = getHighlightedText(text, highlights);
+  useEffect(() => {
+    const anFram = setTimeout(() => {
+      setHighlightedText(
+        getHighlights(text, searchValue, terms, highlightRanges)
+      );
+    }, random(0, 15) * 10);
+
+    return () => {
+      clearTimeout(anFram);
+    };
+  }, [match, children, searchValue]);
 
   return <Highlight dangerouslySetInnerHTML={{ __html: highlightedText }} />;
 }

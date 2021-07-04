@@ -8,7 +8,7 @@ import { SongwriterCard } from 'components/Songwriter';
 import HighlightTextContext from 'contexts/highlightText';
 import useSearch from 'hooks/useSearch';
 
-import { Container, Loader, Counter } from './styles';
+import { Container, Loader } from './styles';
 
 const songwriters = allSongwriters.map(getDefaultResultItem);
 
@@ -48,7 +48,6 @@ export default function Home() {
         placeholder="Odszukaj po nazwisku lub esensjonalnej piosence..."
       />
       <Loader $loading={searchInProgress} />
-      <Counter>(Długość listy: {listCount})</Counter>
       {list.map(({ item: songwriter, searchResult }) => (
         <HighlightTextContext.Provider
           key={songwriter.slug}
