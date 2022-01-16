@@ -1,21 +1,45 @@
 {
     "name": "Adam Skorupka",
-    "description": [
-      "Akapit 1",
-      "Akapit 2 z linkiem https://google.pl"
-    ],
     "playlists": [{
       "author": "Krzysztof Ciach",
-      "mediaUrl": "https://open.spotify.com/playlist/5Zs90pY4M270XHGCK5TfF9",
-      "name": "[2021] do odsłuchu"
+      "mediaUrl": "https://open.spotify.com/playlist/2MPLxsL8QhroGLJKWo5LOk",
+      "name": "[PSB] Adam Skorupka"
     }],
     "tops": [
       {
-        "artist": "Ariana Grande ft. Mac Miller",
-        "title": "The Way",
-        "mediaUrl": "https://www.youtube.com/watch?v=_sV0S8qWSy0",
-        "lyrics": "Johnson Novak",
-        "year": 2010
+        "artist": "Piort Szczepanik",
+        "title": "Nie chodz po parku sama",
+        "mediaUrl": "https://www.youtube.com/watch?v=4NHmA5Y1VMw",
+        "lyrics": "Jacek Fedorowicz",
+        "year": "lata 60 XXw."
+      },
+      {
+        "artist": "Violetta Villas",
+        "title": "Do Ciebie, mamo",
+        "mediaUrl": "https://www.youtube.com/watch?v=N68_SARhXEw",
+        "lyrics": "Mirosław Łebkowski, Stanisław Werner",
+        "year": 1964
+      },
+      {
+        "artist": "Fasolki",
+        "title": "Czarownica z księzyca",
+        "mediaUrl": "https://www.youtube.com/watch?v=ExkTS5MpOww",
+        "lyrics": "Andrzej Marek Grabowski",
+        "year": 1988
+      },
+      {
+        "artist": "Irena Jarocka",
+        "title": "Chłopcy z weselszych lat",
+        "mediaUrl": "https://www.youtube.com/watch?v=Sy4-yADhRJw",
+        "lyrics": "Jacek Korczakowski",
+        "year": 1976
+      },
+      {
+        "artist": "Anna German",
+        "title": "Skrzydlaty koń",
+        "mediaUrl": "https://www.youtube.com/watch?v=XJXJQslNudQ",
+        "lyrics": "Jacek Korczakowski",
+        "year": 1976
       }
     ]
   }

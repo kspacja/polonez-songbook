@@ -1,21 +1,55 @@
 {
     "name": "Jerzy Wasowski",
     "description": [
-      "Akapit 1",
-      "Akapit 2 z linkiem https://google.pl"
+      "Dwuczęściowa audycja o Kabarecie Starszych Panów: https://www.mixcloud.com/krzysztof-ciach/polonez-7-listopada-2017r-kabaret-starszych-pan%C3%B3w-cz-1-radio-luz-916fm/, https://www.mixcloud.com/krzysztof-ciach/polonez-7-listopada-2017r-kabaret-starszych-pan%C3%B3w-cz-2-radio-luz-916fm/"
     ],
-    "playlists": [{
-      "author": "Krzysztof Ciach",
-      "mediaUrl": "https://open.spotify.com/playlist/5Zs90pY4M270XHGCK5TfF9",
-      "name": "[2021] do odsłuchu"
-    }],
+    "playlists": [
+      {
+        "author": "Krzysztof Ciach",
+        "mediaUrl": "https://open.spotify.com/playlist/1XTsaPP1sqTE7ZCrgxfkP7",
+        "name": "[PSB] Jerzy Wasowski"
+      },
+      {
+        "author": "Krzysztof Ciach",
+        "mediaUrl": "https://www.youtube.com/playlist?list=PLvaE3I24S28rRWkVVuiPrsqrD1PTGJqc3",
+        "name":"[PSB] Jerzy Wasowski"
+      }
+    ],
     "tops": [
       {
-        "artist": "Ariana Grande ft. Mac Miller",
-        "title": "The Way",
-        "mediaUrl": "https://www.youtube.com/watch?v=_sV0S8qWSy0",
-        "lyrics": "Johnson Novak",
-        "year": 2010
+        "artist": "Kabaret Starszy Panów / Boghan Łazuka",
+        "title": "To było tak",
+        "mediaUrl": "https://www.youtube.com/watch?v=oZZ2mOvtk5w",
+        "lyrics": "Jeremi Przybora",
+        "year": 1962
+      }, 
+      {
+        "artist": "Kabaret Starszy Panów / Kalina Jędruski",
+        "title": "Zmierzch",
+        "mediaUrl": "https://www.youtube.com/watch?v=wmXYriK-lUY",
+        "lyrics": "Jeremi Przybora",
+        "year": 1960
+      },
+      {
+        "artist": "Hanna Banaszak",
+        "title": "Zegnaj kotku",
+        "mediaUrl": "https://www.youtube.com/watch?v=0BMW-onJSqQ",
+        "lyrics": "Jeremi Przybora",
+        "year": 1981
+      },
+      {
+        "artist": "Kabaret Starszy Panów / Kalina Jędrusik",
+        "title": "Jesienna dziewczyna",
+        "mediaUrl": "https://www.youtube.com/watch?v=inWkW2zzqXk",
+        "lyrics": "Jeremi Przybora",
+        "year": 1962
+      },
+      {
+        "artist": "Kabaret Starszy Panów / Kalina Jędruski",
+        "title": "Na całej połaci śnieg",
+        "mediaUrl": "https://www.youtube.com/watch?v=Um1aeAojDCE",
+        "lyrics": "Jeremi Przybora",
+        "year": 1965
       }
     ]
   }

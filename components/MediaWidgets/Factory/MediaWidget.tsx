@@ -12,7 +12,7 @@ type MediaWidgetProps = {
   title?: string;
   songwriter?: string;
   lyrics?: string;
-  year?: number;
+  year?: number | string;
 };
 
 export default function MediaWidget({

@@ -2,7 +2,7 @@ export interface Track {
   artist: string;
   title: string;
   lyrics?: string;
-  year?: number;
+  year?: number | string;
 }
 
 export interface Song extends Track {

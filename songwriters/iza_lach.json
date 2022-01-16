@@ -1,21 +1,47 @@
 {
     "name": "Iza Lach",
-    "description": [
-      "Akapit 1",
-      "Akapit 2 z linkiem https://google.pl"
+    "playlists": [
+      {
+        "author": "Krzysztof Ciach",
+        "mediaUrl": "https://open.spotify.com/playlist/0DX9N3DG8oZ0K1E6obu2HH?si=FnZkhL4BTq2nVyq0z1Qxeg",
+        "name": "[BEST] Iza Lach"
+      }
     ],
-    "playlists": [{
-      "author": "Krzysztof Ciach",
-      "mediaUrl": "https://open.spotify.com/playlist/0DX9N3DG8oZ0K1E6obu2HH?si=FnZkhL4BTq2nVyq0z1Qxeg",
-      "name": "[BEST] Iza Lach"
-    }],
     "tops": [
       {
-        "artist": "Ariana Grande ft. Mac Miller",
-        "title": "The Way",
-        "mediaUrl": "https://www.youtube.com/watch?v=_sV0S8qWSy0",
-        "lyrics": "Johnson Novak",
+        "artist": "Iza Lach",
+        "title": "Milion",
+        "mediaUrl": "https://www.youtube.com/watch?v=NC9NT27udUc",
+        "lyrics": "Iza Lach",
         "year": 2010
+      },
+      {
+        "artist": "IZA",
+        "title": "What's the difference",
+        "mediaUrl": "https://www.youtube.com/watch?v=Mpikix2yVCc",
+        "lyrics": "Iza Lach",
+        "year": 2013
+      },
+      {
+        "artist": "Marina",
+        "title": "One by One",
+        "mediaUrl": "https://www.youtube.com/watch?v=j79UD_3ej2w",
+        "lyrics": "Iza Lach",
+        "year": 2013
+      },
+      {
+        "artist": "Iza Lach",
+        "title": "Futro",
+        "mediaUrl": "https://www.youtube.com/watch?v=IQKfC98yUk8",
+        "lyrics": "Iza Lach",
+        "year": 2011
+      },
+      {
+        "artist": "Iza Lach",
+        "title": "Nie",
+        "mediaUrl": "https://www.youtube.com/watch?v=0970jC_WYGM",
+        "lyrics": "Iza Lach",
+        "year": 2008
       }
     ]
   }

@@ -1,21 +1,46 @@
 {
     "name": "Igor Nikiforow/Jerzy Rogiewicz",
-    "description": [
-      "Akapit 1",
-      "Akapit 2 z linkiem https://google.pl"
-    ],
+    "description": "Tutaj praca była wspólna z informacji, które mi są wiadome, więc duet songwriterski.",
     "playlists": [{
       "author": "Krzysztof Ciach",
-      "mediaUrl": "https://open.spotify.com/playlist/5Zs90pY4M270XHGCK5TfF9",
-      "name": "[2021] do odsłuchu"
+      "mediaUrl": "https://open.spotify.com/playlist/47WbZ0AsiXqyQvtI9FQGS8?si=7a17b82a933345da",
+      "name": "[PSB] Jerz Igor"
     }],
     "tops": [
       {
-        "artist": "Ariana Grande ft. Mac Miller",
-        "title": "The Way",
-        "mediaUrl": "https://www.youtube.com/watch?v=_sV0S8qWSy0",
-        "lyrics": "Johnson Novak",
-        "year": 2010
+        "artist": "Jerz Igor, Magdalena Gajdzica",
+        "title": "Nuda",
+        "mediaUrl": "https://www.youtube.com/watch?v=6fj-OSuAuPs",
+        "lyrics": "Dorota Masłowska",
+        "year": 2020
+      },
+      {
+        "artist": "Jerz Igor",
+        "title": "Wyspa",
+        "mediaUrl": "https://www.youtube.com/watch?v=a7idtX3HiSk",
+        "lyrics": "Grzegorz Uzdański",
+        "year": 2020
+      },
+      {
+        "artist": "Jerz Igor",
+        "title": "Pies i ja",
+        "mediaUrl": "https://www.youtube.com/watch?v=raEMjInijrM",
+        "lyrics": "Grzegorz Uzdański",
+        "year": 2020
+      },
+      {
+        "artist": "Jerz Igor",
+        "title": "Wagary",
+        "mediaUrl": "https://www.youtube.com/watch?v=_m-uRwVV82Q",
+        "lyrics": "Jerzy Rogiewicz",
+        "year": 2020
+      },
+      {
+        "artist": "Jerz Igor",
+        "title": "Królewicz",
+        "mediaUrl": "https://www.youtube.com/watch?v=4bI0L8NRE1w",
+        "lyrics": "Kamil Gamza",
+        "year": 2014
       }
     ]
   }

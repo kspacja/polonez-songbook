@@ -39,6 +39,8 @@ export default function Home() {
     mapResultToGA
   );
 
+  console.log(list.length);
+
   return (
     <Container>
       <SearchInput

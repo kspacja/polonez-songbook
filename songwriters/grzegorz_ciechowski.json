@@ -1,21 +1,45 @@
 {
     "name": "Grzegorz Ciechowski",
-    "description": [
-      "Akapit 1",
-      "Akapit 2 z linkiem https://google.pl"
-    ],
     "playlists": [{
       "author": "Krzysztof Ciach",
-      "mediaUrl": "https://open.spotify.com/playlist/5Zs90pY4M270XHGCK5TfF9",
-      "name": "[2021] do odsłuchu"
+      "mediaUrl": "https://open.spotify.com/playlist/7HzKYyRThFbzJxe2slcv7p",
+      "name": "[PSB] Grzegorz Ciechowski"
     }],
     "tops": [
       {
-        "artist": "Ariana Grande ft. Mac Miller",
-        "title": "The Way",
-        "mediaUrl": "https://www.youtube.com/watch?v=_sV0S8qWSy0",
-        "lyrics": "Johnson Novak",
-        "year": 2010
+        "artist": "Republika",
+        "title": "Na barykadach walka trwa",
+        "mediaUrl": "https://www.youtube.com/watch?v=lgOOgUsuyxU",
+        "lyrics": "Grzegorz Ciechowski",
+        "year": 1984
+      },
+      {
+        "artist": "Republika",
+        "title": "Fanatycy ognia",
+        "mediaUrl": "https://www.youtube.com/watch?v=1284yjXuI88",
+        "lyrics": "Grzegorz Ciechowski",
+        "year": 1984
+      },
+      {
+        "artist": "Republika",
+        "title": "Sexy doll",
+        "mediaUrl": "https://www.youtube.com/watch?v=yIYC26gylFs",
+        "lyrics": "Grzegorz Ciechowski",
+        "year": 1983
+      },
+      {
+        "artist": "Republika",
+        "title": "Telefon",
+        "mediaUrl": "https://www.youtube.com/watch?v=qEXyPSBYbMA",
+        "lyrics": "Grzegorz Ciechowski",
+        "year": 1982
+      },
+      {
+        "artist": "Obywatel G.C",
+        "title": "Tak długo czekam",
+        "mediaUrl": "https://www.youtube.com/watch?v=_1K6aHmq8_U",
+        "lyrics": "Grzegorz Ciechowski",
+        "year": 1986
       }
     ]
   }

@@ -6,16 +6,44 @@
     ],
     "playlists": [{
       "author": "Krzysztof Ciach",
-      "mediaUrl": "https://open.spotify.com/playlist/5Zs90pY4M270XHGCK5TfF9",
-      "name": "[2021] do odsłuchu"
+      "mediaUrl": "https://open.spotify.com/playlist/37ecbmrQrDYCUkPnpYg8bB?si=e48ad40d6c504909",
+      "name": "[PSB] Justyna Steczkowska"
     }],
     "tops": [
       {
-        "artist": "Ariana Grande ft. Mac Miller",
-        "title": "The Way",
-        "mediaUrl": "https://www.youtube.com/watch?v=_sV0S8qWSy0",
-        "lyrics": "Johnson Novak",
-        "year": 2010
+        "artist": "Justyna Steczkowska",
+        "title": "Dziewczyna szamana",
+        "mediaUrl": "https://www.youtube.com/watch?v=eVapbhUdI34",
+        "lyrics": "Ewa Omernik (Grzegorz Ciechowski)",
+        "year": 1996
+      },
+      {
+        "artist": "Justyna Steczkowska",
+        "title": "Oko za oko",
+        "mediaUrl": "https://www.youtube.com/watch?v=gGiD5fFON8k",
+        "lyrics": "Ewa Omernik (Grzegorz Ciechowski)",
+        "year": 1996
+      },
+      {
+        "artist": "Justyna Steczkowska",
+        "title": "Za karę",
+        "mediaUrl": "https://www.youtube.com/watch?v=KufyTQ2tbdA",
+        "lyrics": "Ewa Omernik (Grzegorz Ciechowski)",
+        "year": 1997
+      },
+      {
+        "artist": "Justyna Steczkowska",
+        "title": "Myte dusze",
+        "mediaUrl": "https://www.youtube.com/watch?v=wdm856fjWcQ",
+        "lyrics": "Ewa Omernik (Grzegorz Ciechowski)",
+        "year": 1996
+      },
+      {
+        "artist": "Justyna Steczkowska",
+        "title": "Znikając",
+        "mediaUrl": "https://www.youtube.com/watch?v=XPIN0Dp97qw",
+        "lyrics": "Ewa Omernik (Grzegorz Ciechowski)",
+        "year": 1997
       }
     ]
   }

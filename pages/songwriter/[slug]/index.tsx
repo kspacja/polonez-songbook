@@ -41,7 +41,7 @@ const navigationItems = [
   { href: '#short-note', text: 'Coś jeszcze?' },
 ];
 
-function getDescription({ description }: Songwriter) {
+function getDescription({ description = '' }: Songwriter) {
   return typeof description === 'string'
     ? description
     : description.join('\n\n------------\n\n');

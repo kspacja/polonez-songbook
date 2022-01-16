@@ -1,21 +1,55 @@
 {
     "name": "Wojciech Karolak",
     "description": [
-      "Akapit 1",
-      "Akapit 2 z linkiem https://google.pl"
+      "#### W ramach rankingu Polskie Piosenki Wszech Czasów serwisu screenagers: \n\n - Kuba Ambrozewski o \"Krótkim Metrazu\": http://www.screenagers.pl/index.php?service=xtras&action=show&id=330 \n\n - Jędrzej Szymanowski o \"Wyszłam za maz zaraz wracam\": http://www.screenagers.pl/index.php?service=xtras&action=show&id=341"
     ],
-    "playlists": [{
-      "author": "Krzysztof Ciach",
-      "mediaUrl": "https://open.spotify.com/playlist/5Zs90pY4M270XHGCK5TfF9",
-      "name": "[2021] do odsłuchu"
-    }],
+    "playlists": [
+      {
+        "author": "Krzysztof Ciach",
+        "mediaUrl": "https://open.spotify.com/playlist/3pf9BcLXXXxgQuuSeFcAkF",
+        "name": "[PSB] Wojciech Karolak"
+      },
+      {
+        "author":"Krzysztof Ciach",
+        "mediaUrl": "https://www.youtube.com/playlist?list=PLvaE3I24S28pBoEXWfNWXabrTlPYB4QOg",
+        "name": "Wojciech Karolak"
+      }
+    ],
     "tops": [
       {
-        "artist": "Ariana Grande ft. Mac Miller",
-        "title": "The Way",
-        "mediaUrl": "https://www.youtube.com/watch?v=_sV0S8qWSy0",
-        "lyrics": "Johnson Novak",
-        "year": 2010
+        "artist": "Ewa Bem",
+        "title": "Krótki metraz",
+        "mediaUrl": "https://www.youtube.com/watch?v=NPWMc3K-7y0",
+        "lyrics": "Maria Czubaszek",
+        "year": 1976
+      },
+      {
+        "artist": "Alibabki",
+        "title": "Była sobie para",
+        "mediaUrl": "https://www.youtube.com/watch?v=p_Uf34nyRTM",
+        "lyrics": "Maria Czubaszek",
+        "year": 1977
+      },
+      {
+        "artist": "Ewa Bem",
+        "title": "Bez tego czy owego",
+        "mediaUrl": "https://www.youtube.com/watch?v=vWAU8-qAvvA",
+        "lyrics": "Wojciech Jagielski",
+        "year": 1993
+      },
+      {
+        "artist": "Ewa Bem",
+        "title": "Wyszłam za mąz, zaraz wracam",
+        "mediaUrl": "https://www.youtube.com/watch?v=N-8bk1RYhEU",
+        "lyrics": "Maria Czubaszek",
+        "year": 1993
+      },
+      {
+        "artist": "Maryla Rodowicz",
+        "title": "Lubię nas",
+        "mediaUrl": "https://www.youtube.com/watch?v=65VgDAj0Ips",
+        "lyrics": "Agnieszka Osiecka",
+        "year": 1976
       }
     ]
   }
