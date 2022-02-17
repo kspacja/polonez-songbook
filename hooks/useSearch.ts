@@ -59,8 +59,6 @@ function useSuspens<T>(
   useEffect(() => {
     if (lastInProgress.current && !searchInProgress) {
       setCurrentList(foundList);
-
-      document.addEventListener('scroll', unsus, { once: true });
     }
     lastInProgress.current = searchInProgress;
   }, [foundList, searchInProgress]);
@@ -70,6 +68,7 @@ function useSuspens<T>(
       setCurrentList(defaultList);
     }
     setSuspended(true);
+    document.addEventListener('scroll', unsus, { once: true });
   }, [searchValue]);
 
   useEffect(() => {
@@ -113,10 +112,10 @@ export default function useSearch<T>(
 
   useGATracking(searchResult, searchValue, mapResultToGAListItem);
 
-  const foundList = useMemo(() => searchResult.map(mapResultToListItem), [
-    searchValue,
-    searchResult,
-  ]);
+  const foundList = useMemo(
+    () => searchResult.map(mapResultToListItem),
+    [searchValue, searchResult]
+  );
 
   const [suspendedList, count] = useSuspens(
     foundList,

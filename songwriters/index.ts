@@ -4,6 +4,7 @@ import getPhrases from 'utils/getPhrases';
 import { Songwriter, Song } from 'types';
 import spotifyPlaylists from './spotify-playlists.auto.json';
 import getTokens from 'utils/getTokens';
+import isSongwriterInProgress from '../utils/isSongwriterInProgress';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -23,6 +24,7 @@ const songwriters: Songwriter[] = songwritersFile
       playlistsSongs: spotifyPlaylists[slug],
     };
   })
+  .filter((writer) => isSongwriterInProgress(writer))
   .sort((swA, swB) => {
     return swA.name.localeCompare(swB.name);
   });

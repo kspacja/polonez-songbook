@@ -1,6 +1,9 @@
 import React from 'react';
 import { SearchResult } from 'minisearch';
-import allSongwriters, { songwritersSearch, songwritersMap } from 'songwriters';
+import allSongwriters, {
+  songwritersSearch,
+  songwritersMap,
+} from 'songwriters';
 import getDefaultResultItem from 'utils/getDefaultResultItem';
 
 import SearchInput from 'components/SearchInput';
@@ -38,8 +41,6 @@ export default function Home() {
     songwriters,
     mapResultToGA
   );
-
-  console.log(list.length);
 
   return (
     <Container>
