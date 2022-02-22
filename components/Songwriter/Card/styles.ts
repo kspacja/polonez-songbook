@@ -4,6 +4,7 @@ export const Container = styled.div`
   background: ${(props) => props.theme.card};
   padding: 1.25rem 0 0;
   position: relative;
+  contain: content;
 `;
 
 export const HeadContainer = styled.div`

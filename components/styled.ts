@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import color from 'utils/color';
 
+import { animated } from 'react-spring';
+
 interface ButtonProps {
   $fontSize?: number;
 }
@@ -28,10 +30,7 @@ interface AccordionContentProps {
   $maxHeight: number;
 }
 
-export const AccordionContent = styled.div`
+export const AccordionContent = styled(animated.div)`
   width: 100%;
   overflow: hidden;
-  transition: max-height 0.1s ease;
-  max-height: ${(props: AccordionContentProps) =>
-    props.$isOpen ? props.$maxHeight : 0}px;
 `;

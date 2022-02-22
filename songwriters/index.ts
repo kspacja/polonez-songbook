@@ -1,10 +1,6 @@
 import snakeCase from 'lodash/snakeCase';
-import MiniSearch from 'minisearch';
-import getPhrases from 'utils/getPhrases';
 import { Songwriter, Song } from 'types';
 import spotifyPlaylists from './spotify-playlists.auto.json';
-import getTokens from 'utils/getTokens';
-import isSongwriterInProgress from '../utils/isSongwriterInProgress';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -24,7 +20,7 @@ const songwriters: Songwriter[] = songwritersFile
       playlistsSongs: spotifyPlaylists[slug],
     };
   })
-  .filter((writer) => isSongwriterInProgress(writer))
+  // .filter((writer) => isSongwriterInProgress(writer))
   .sort((swA, swB) => {
     return swA.name.localeCompare(swB.name);
   });
@@ -40,46 +36,3 @@ export const songwritersMap: {
   }),
   {}
 );
-
-const splitTops = /; |;/g;
-
-export const songwritersSearch = new MiniSearch({
-  fields: ['name', 'tops', 'playlistsSongs'],
-  storeFields: ['slug'],
-  tokenize: (text: string, fieldName) => {
-    const tokens = getTokens(text);
-    switch (fieldName) {
-      case 'name':
-        return [...tokens, text];
-      case 'tops':
-      case 'playlistsSongs':
-        return [...tokens, ...text.split(splitTops)];
-      default:
-        return tokens;
-    }
-  },
-  searchOptions: {
-    boost: { name: 10 },
-    prefix: true,
-    fuzzy: 0.15,
-    tokenize: getPhrases,
-  },
-  extractField: (document: Songwriter, fieldName) => {
-    switch (fieldName) {
-      case 'tops':
-        return document.tops
-          .map((song: Song) => {
-            return `${song.artist};${song.title};${song.lyrics}`;
-          })
-          .join('; ');
-      case 'playlistsSongs':
-        return document.playlistsSongs
-          ?.map(({ artist, title, album }) => `${artist};${title};${album}`)
-          .join('; ');
-      default:
-        return document[fieldName];
-    }
-  },
-});
-
-songwritersSearch.addAll(songwriters);

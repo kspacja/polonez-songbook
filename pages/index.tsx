@@ -1,9 +1,7 @@
 import React from 'react';
 import { SearchResult } from 'minisearch';
-import allSongwriters, {
-  songwritersSearch,
-  songwritersMap,
-} from 'songwriters';
+import allSongwriters, { songwritersMap } from 'songwriters';
+import { songwritersSearch } from 'songwriters/search';
 import getDefaultResultItem from 'utils/getDefaultResultItem';
 
 import SearchInput from 'components/SearchInput';
@@ -28,19 +26,29 @@ function mapResultToGA(searchResult: SearchResult) {
   };
 }
 
-export default function Home() {
-  const [
-    list,
-    handleChange,
-    searchInProgress,
-    searchValue,
-    listCount,
-  ] = useSearch(
-    songwritersSearch,
-    mapResultToSongwriter,
-    songwriters,
-    mapResultToGA
+function SongwriterWithContext({ songwriter, searchResult, searchValue }) {
+  return (
+    <HighlightTextContext.Provider
+      value={{
+        searchResult,
+        searchValue: searchValue.length > 2 ? searchValue : '',
+      }}
+    >
+      <SongwriterCard songwriter={songwriter} />
+    </HighlightTextContext.Provider>
   );
+}
+
+export default function Home() {
+  const [list, handleChange, searchInProgress, searchValue, listCount] =
+    useSearch(
+      songwritersSearch,
+      mapResultToSongwriter,
+      songwriters,
+      mapResultToGA
+    );
+
+  console.log(list.length);
 
   return (
     <Container>
@@ -52,15 +60,12 @@ export default function Home() {
       />
       <Loader $loading={searchInProgress} />
       {list.map(({ item: songwriter, searchResult }) => (
-        <HighlightTextContext.Provider
+        <SongwriterWithContext
           key={songwriter.slug}
-          value={{
-            searchResult,
-            searchValue: searchValue.length > 2 ? searchValue : '',
-          }}
-        >
-          <SongwriterCard songwriter={songwriter} />
-        </HighlightTextContext.Provider>
+          songwriter={songwriter}
+          searchResult={searchResult}
+          searchValue={searchValue}
+        />
       ))}
       {listCount === 0 && 'No, nie udało się nic znaleźć'}
     </Container>

@@ -48,7 +48,7 @@ function useSuspens<T>(
   searchValue: string,
   defaultList: ListItem<T>[]
 ): [list: ListItem<T>[], count: number] {
-  const [suspended, setSuspended] = useState(false);
+  const [suspended, setSuspended] = useState(true);
   const lastInProgress = useRef(false);
   const [currentList, setCurrentList] = useState(defaultList);
 
@@ -64,10 +64,11 @@ function useSuspens<T>(
   }, [foundList, searchInProgress]);
 
   useEffect(() => {
+    setSuspended(true);
     if (!shouldSearch(searchValue)) {
       setCurrentList(defaultList);
     }
-    setSuspended(true);
+
     document.addEventListener('scroll', unsus, { once: true });
   }, [searchValue]);
 
@@ -79,11 +80,12 @@ function useSuspens<T>(
     };
   }, []);
 
-  const list = shouldSearch(searchValue) ? currentList : defaultList;
-
   return [
-    list.slice(0, suspended ? SUSPENDED_LIST_LENGTH : list.length),
-    list.length,
+    currentList.slice(
+      0,
+      suspended ? SUSPENDED_LIST_LENGTH : currentList.length
+    ),
+    currentList.length,
   ];
 }
 

@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
+import { Transition } from 'react-spring';
 import Link from 'next/link';
 
 import { Songwriter } from 'types';
@@ -44,20 +45,28 @@ export default function Card({ songwriter }: CardProps) {
           )}
         </div>
       </HeadContainer>
-      <AccordionContent
-        $maxHeight={350}
-        $isOpen={isTopListOpen || hasTopsMatch}
+      <Transition
+        items={isTopListOpen || hasTopsMatch}
+        from={{ maxHeight: 0 }}
+        enter={{ maxHeight: 350 }}
+        leave={{ maxHeight: 0 }}
       >
-        <TopList>
-          {songwriter.tops.map((song) => {
-            return (
-              <li key={song.mediaUrl}>
-                <SongHead song={song} />
-              </li>
-            );
-          })}
-        </TopList>
-      </AccordionContent>
+        {(style, item) =>
+          item && (
+            <AccordionContent style={{ maxHeight: style.maxHeight }}>
+              <TopList>
+                {songwriter.tops.map((song) => {
+                  return (
+                    <li key={song.mediaUrl}>
+                      <SongHead song={song} />
+                    </li>
+                  );
+                })}
+              </TopList>
+            </AccordionContent>
+          )
+        }
+      </Transition>
       {hasPlaylistsSongsMatch && <PlaylistSongs songwriter={songwriter} />}
     </Container>
   );
